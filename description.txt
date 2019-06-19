@@ -2,6 +2,8 @@ Aetherium is a mod focused around adding items, weapons, and accessories with in
 
 Warning: This mod is in VERY early development. Expect bugs or unbalance. Multiplayer may or may not work.
 
+Changelog: 0.0.3.4: Fixed recipes. 
+
 Current additions:
 
 Vampire Charm: Stores damage done as 'charge'. Heals you upon taking damage, consuming charge. Drops from enemies on the surface.
