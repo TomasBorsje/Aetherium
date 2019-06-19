@@ -2,11 +2,11 @@ Aetherium is a mod focused around adding items, weapons, and accessories with in
 
 Warning: This mod is in VERY early development. Expect bugs or unbalance. Multiplayer may or may not work.
 
-Currently existing things:
+Current additions:
 
-Vampire Charm: Stores damage done as charge. Heals you upon taking damage, consuming charge. Drops from enemies on the surface.
+Vampire Charm: Stores damage done as 'charge'. Heals you upon taking damage, consuming charge. Drops from enemies on the surface.
 
-Dead Man's Plate: Gain more defense the faster you're moving. Drops from enemies on the surface.
+Dead Man's Plate: Gain defense, and more defense the faster you're moving. Drops from enemies on the surface.
 
 Flame Lantern: Summoning damage ignites enemies. Increases max minions & minion damage. Craftable.
 
@@ -19,7 +19,7 @@ Jade Quiver: Restores a tiny amount of HP when ammo is consumed. Dealing critica
 Guardian's Resolve: Gain defense, and more defense based on the amount of Town NPCs you currently have. Drops from enemies on the surface.
 
 
-WIP: (Subject to change ofcourse)
+WIP: (Subject to change of course)
 
 Test Sword: Sword that changes damage each time you enter your world.
 
