@@ -1,6 +1,6 @@
 Aetherium is a mod focused around adding items, weapons, and accessories with interesting mechanics.
 
-Warning: This mod is in VERY early development. Expect bugs or unbalance. Multiplayer may or may not work.
+Warning: This mod is in VERY early development. Expect bugs or unbalance. Multiplayer may or may not work. Item icons, textures, & recipes are (mostly) placeholder.
 
 Changelog: 0.0.3.4: Fixed recipes. 
 
@@ -8,15 +8,15 @@ Current additions:
 
 Vampire Charm: Stores damage done as 'charge'. Heals you upon taking damage, consuming charge. Drops from enemies on the surface.
 
-Dead Man's Plate: Gain defense, and more defense the faster you're moving. Drops from enemies on the surface.
+Dead Man's Plate: Gain defense, and gain extra defense determined by how fast you're moving. Drops from enemies on the surface.
 
-Flame Lantern: Summoning damage ignites enemies. Increases max minions & minion damage. Craftable.
+Flame Lantern: Minion damage ignites enemies. Increases max minions & minion damage. Craftable.
 
-Frost Lantern: Summoning damage ignites enemies in frostfire. Increases max minions & minion damage. Craftable.
+Frost Lantern: Minion damage ignites enemies in frostfire. Increases max minions & minion damage. Craftable.
 
-Cursed Lantern: Summoning damage sets enemies aflame in shadowflame & cursed inferno if they are already alight with both frost and normal fire. Increases max minions & minion damage. Craftable.
+Cursed Lantern: Minion damage sets enemies aflame in shadowflame & cursed inferno if they are already alight with both frost and normal fire. Increases max minions & minion damage. Craftable.
 
-Jade Quiver: Restores a tiny amount of HP when ammo is consumed. Dealing critical with arrows restores a larger amount of health. Increases ranged damage. Craftable.
+Jade Quiver: Restores a tiny amount of HP when ammo is consumed. Dealing critical damage with arrows restores a larger amount of health. Increases ranged damage. Craftable.
 
 Guardian's Resolve: Gain defense, and more defense based on the amount of Town NPCs you currently have. Drops from enemies on the surface.
 
