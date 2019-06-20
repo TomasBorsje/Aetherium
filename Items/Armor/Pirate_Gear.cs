@@ -29,7 +29,6 @@ namespace Aetherium.Items.Armor
         {
             player.GetModPlayer<AetheriumModPlayer>().theCulling = true;
             player.GetModPlayer<AetheriumModPlayer>().deadMansPlate = true;
-            player.statLifeMax += 15;
         }
 
         public override void AddRecipes()
