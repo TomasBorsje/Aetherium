@@ -31,7 +31,7 @@ namespace Aetherium.Items.Armor
             // To assign the player the frostBurnSummon effect, we can't do player.frostBurnSummon = true because Player doesn't have frostBurnSummon. Be sure to remember to call the GetModPlayer method to retrieve the ModPlayer instance attached to the specified Player.
             player.GetModPlayer<AetheriumModPlayer>().flameLantern = true;
             player.maxMinions += 1;
-            player.minionDamage += 0.04f;
+            player.minionDamage += 0.07f;
         }
 
         public override void AddRecipes()

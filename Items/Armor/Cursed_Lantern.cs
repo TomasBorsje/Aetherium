@@ -30,7 +30,7 @@ namespace Aetherium.Items.Armor
         {
             player.GetModPlayer<AetheriumModPlayer>().cursedLantern = true;
             player.maxMinions += 1;
-            player.minionDamage += 0.06f;
+            player.minionDamage += 0.1f;
         }
 
         public override void AddRecipes()

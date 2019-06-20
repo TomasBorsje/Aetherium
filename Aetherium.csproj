@@ -58,6 +58,8 @@
     <Compile Include="Items\Armor\Jade_Quiver.cs" />
     <Compile Include="Items\Armor\Pirate_Gear.cs" />
     <Compile Include="Items\Armor\Pirates_Coinpurse.cs" />
+    <Compile Include="Items\Armor\True_Unobtanium.cs" />
+    <Compile Include="Items\Armor\Unobtanium.cs" />
     <Compile Include="Items\Armor\Vampire_Charm.cs" />
     <Compile Include="Items\Weapons\Test_Sword.cs" />
     <Compile Include="Items\Weapons\Overload_Staff.cs" />

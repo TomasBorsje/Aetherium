@@ -18,6 +18,8 @@ namespace Aetherium
         public bool deadMansPlate;
         public bool theCulling;
         public int cullingCount = 0;
+        public bool unobtanium;
+        public bool mana_consume;
 
         public override void ResetEffects()
         {
@@ -28,6 +30,8 @@ namespace Aetherium
             vampireCharm = false;
             guardiansCourage = false;
             deadMansPlate = false;
+            unobtanium = false;
+            mana_consume = false;
         }
 
         public override void PostUpdateEquips()
@@ -56,6 +60,13 @@ namespace Aetherium
                 else
                 {
                     cullingCount++;
+                }
+            }
+            if (mana_consume && !proj.minion && target.lifeMax > 1 && target.damage > 1)
+            {
+                if(player.CheckMana(30, true))
+                {
+                    target.StrikeNPC(20, 1, proj.direction);
                 }
             }
             if (vampireCharm)
@@ -98,6 +109,13 @@ namespace Aetherium
 
         public override void OnHitNPC(Item item, NPC target, int damage, float knockback, bool crit)
         {
+            if (mana_consume && !item.summon && target.lifeMax > 1 && target.damage > 1)
+            {
+                if (player.CheckMana(30, true))
+                {
+                    target.StrikeNPC(20, 1, item.direction);
+                }
+            }
             if (vampireCharm)
             {
                 if (vampireCharmCharge < 51)

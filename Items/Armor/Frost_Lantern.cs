@@ -30,7 +30,7 @@ namespace Aetherium.Items.Armor
         {
             player.GetModPlayer<AetheriumModPlayer>().heartOfFrost = true;
             player.maxMinions += 1;
-            player.minionDamage += 0.04f;
+            player.minionDamage += 0.08f;
         }
 
         public override void AddRecipes()

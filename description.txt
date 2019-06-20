@@ -3,9 +3,9 @@ Aetherium is a mod focused around adding items, weapons, and accessories with in
 Warning: This mod is in VERY early development. Expect bugs or unbalance. Multiplayer may or may not work. Item icons, textures, & recipes are (mostly) placeholder.
 
 Changelog: 
-0.0.3.4: Fixed recipes. 
 0.0.3.6: Added Pirate's Coinpurse.
 0.0.3.7: Added Pirate Gear, a combination of Dead Man's Plate and Pirate's Coinpurse. Craftable anywhere alongside 3 gold bars. 
+0.0.4: Added Unobtanium and True Unobtanium (WIP)
 
 
 Current additions:
@@ -27,8 +27,12 @@ Jade Quiver: Restores a tiny amount of HP when ammo is consumed. Dealing critica
 Guardian's Resolve: Gain defense, and more defense based on the amount of Town NPCs you currently have. Drops from enemies on the surface.
 
 
-WIP: (Subject to change of course)
+WIP: (you will need cheat sheet or an item spawning mod for these)
 
 Test Sword: Sword that changes damage each time you enter your world.
 
 Overload Staff: Grapple hook that functions as a weapon.
+
+Unobtanium: Increases minion damage based on your current mana. 10% minion damage per 200 mana
+
+True Unobtanium: Dealing non-minion damage can consume 30 mana to deal an additional 20 damage
