@@ -14,19 +14,29 @@ namespace Aetherium
     {
         public override void NPCLoot(NPC npc)
         {
-            if (npc.position.Y > Main.worldSurface && npc.position.Y < Main.worldSurface * 0.35)
+            if (npc.damage > 1 && npc.life > 1)
             {
-                if (Main.rand.Next(50) == 0)
+                if (npc.position.Y > Main.worldSurface && npc.position.Y < Main.worldSurface * 0.35)
                 {
-                    Item.NewItem(npc.getRect(), mod.ItemType("Jade_Quiver"));
+                    if (Main.rand.Next(50) == 0)
+                    {
+                        Item.NewItem(npc.getRect(), mod.ItemType("Jade_Quiver"));
+                    }
+                    if (Main.rand.Next(65) == 0)
+                    {
+                        Item.NewItem(npc.getRect(), mod.ItemType("Guardians_Courage"));
+                    }
+                    if (!Main.dayTime && Main.rand.Next(50) == 0)
+                    {
+                        Item.NewItem(npc.getRect(), mod.ItemType("Vampire_Charm"));
+                    }
                 }
-                if (Main.rand.Next(65) == 0)
+                if (npc.position.Y < Main.worldSurface && npc.position.Y > Main.maxTilesY - 200)
                 {
-                    Item.NewItem(npc.getRect(), mod.ItemType("Guardians_Courage"));
-                }
-                if (!Main.dayTime && Main.rand.Next(50) == 0)
-                {
-                    Item.NewItem(npc.getRect(), mod.ItemType("Vampire_Charm"));
+                    if (Main.rand.Next(50) == 0)
+                    {
+                        Item.NewItem(npc.getRect(), mod.ItemType("Pirates_Coinpurse"));
+                    }
                 }
             }
         }

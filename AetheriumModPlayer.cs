@@ -16,6 +16,8 @@ namespace Aetherium
         public int vampireCharmCharge = 0;
         public bool guardiansCourage;
         public bool deadMansPlate;
+        public bool theCulling;
+        public int cullingCount = 0;
 
         public override void ResetEffects()
         {
@@ -42,6 +44,20 @@ namespace Aetherium
 
         public override void OnHitNPCWithProj(Projectile proj, NPC target, int damage, float knockback, bool crit)
         {
+            if (target.life < 1 && theCulling && target.lifeMax > 1 && target.damage > 1)
+            {
+                if (cullingCount >= 10)
+                {
+                    cullingCount = 0;
+                    Item.NewItem(target.getRect(), ItemID.GoldCoin, Main.rand.Next(3));
+                    Item.NewItem(target.getRect(), ItemID.SilverCoin, Main.rand.Next(40));
+                    Item.NewItem(target.getRect(), ItemID.CopperCoin, Main.rand.Next(66));
+                }
+                else
+                {
+                    cullingCount++;
+                }
+            }
             if (vampireCharm)
             {
                 if (vampireCharmCharge < 51)
@@ -100,6 +116,20 @@ namespace Aetherium
                     vampireCharmCharge = 50;
                 }
             }
+            if(target.life < 1 && theCulling && target.lifeMax > 1 && target.damage > 1)
+            {
+                if(cullingCount >= 10)
+                {
+                    cullingCount = 0;
+                    Item.NewItem(target.getRect(), ItemID.GoldCoin, Main.rand.Next(3));
+                    Item.NewItem(target.getRect(), ItemID.SilverCoin, Main.rand.Next(40));
+                    Item.NewItem(target.getRect(), ItemID.CopperCoin, Main.rand.Next(66));
+                }
+                else
+                {
+                    cullingCount++;
+                }
+            }
         }
 
         public override void Hurt(bool pvp, bool quiet, double damage, int hitDirection, bool crit)
@@ -124,7 +154,7 @@ namespace Aetherium
 
         public override void OnConsumeAmmo(Item weapon, Item ammo)
         {
-            if (jadeQuiver)
+            if (jadeQuiver && player.statLife != player.statLifeMax)
             {
                 try
                 {

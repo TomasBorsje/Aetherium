@@ -56,6 +56,7 @@
     <Compile Include="Items\Armor\Frost_Lantern.cs" />
     <Compile Include="Items\Armor\Guardians_Resolve.cs" />
     <Compile Include="Items\Armor\Jade_Quiver.cs" />
+    <Compile Include="Items\Armor\Pirates_Coinpurse.cs" />
     <Compile Include="Items\Armor\Vampire_Charm.cs" />
     <Compile Include="Items\Weapons\Test_Sword.cs" />
     <Compile Include="Items\Weapons\Overload_Staff.cs" />
