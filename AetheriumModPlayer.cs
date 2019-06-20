@@ -18,6 +18,7 @@ namespace Aetherium
         public bool deadMansPlate;
         public bool theCulling;
         public int cullingCount = 0;
+        public bool pirateHealthBuff;
 
         public override void ResetEffects()
         {
@@ -28,6 +29,7 @@ namespace Aetherium
             vampireCharm = false;
             guardiansCourage = false;
             deadMansPlate = false;
+            pirateHealthBuff = false;
         }
 
         public override void PostUpdateEquips()
@@ -39,6 +41,10 @@ namespace Aetherium
             if (deadMansPlate)
             {
                 player.statDefense += (3 + Math.Abs(Convert.ToInt32((Math.Abs(player.velocity.X) + Math.Abs(player.velocity.Y) / 2) * 1.25)));
+            }
+            if(pirateHealthBuff)
+            {
+                player.statLifeMax += 15;
             }
         }
 

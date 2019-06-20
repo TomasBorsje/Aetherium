@@ -5,6 +5,7 @@ Warning: This mod is in VERY early development. Expect bugs or unbalance. Multip
 Changelog: 
 0.0.3.4: Fixed recipes. 
 0.0.3.6: Added Pirate's Coinpurse.
+0.0.3.7: Added Pirate Gear, a combination of Dead Man's Plate and Pirate's Coinpurse that also increases Max HP by 15. Craftable anywhere alongside 3 gold bars. 
 
 
 Current additions:
