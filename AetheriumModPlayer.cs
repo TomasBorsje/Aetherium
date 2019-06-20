@@ -18,7 +18,6 @@ namespace Aetherium
         public bool deadMansPlate;
         public bool theCulling;
         public int cullingCount = 0;
-        public bool pirateHealthBuff;
 
         public override void ResetEffects()
         {
@@ -29,7 +28,6 @@ namespace Aetherium
             vampireCharm = false;
             guardiansCourage = false;
             deadMansPlate = false;
-            pirateHealthBuff = false;
         }
 
         public override void PostUpdateEquips()
@@ -41,10 +39,6 @@ namespace Aetherium
             if (deadMansPlate)
             {
                 player.statDefense += (3 + Math.Abs(Convert.ToInt32((Math.Abs(player.velocity.X) + Math.Abs(player.velocity.Y) / 2) * 1.25)));
-            }
-            if(pirateHealthBuff)
-            {
-                player.statLifeMax += 15;
             }
         }
 
@@ -162,20 +156,10 @@ namespace Aetherium
         {
             if (jadeQuiver && player.statLife != player.statLifeMax)
             {
-                try
-                {
-                    int bonusHp = Main.rand.Next(1, 3);
-                    player.statLife += bonusHp;
-                    player.HealEffect(bonusHp);
-                }
-                catch
-                {
-
-                }
+                int bonusHp = Main.rand.Next(1, 3);
+                player.statLife += bonusHp;
+                player.HealEffect(bonusHp);
             }
         }
     }
-
-    // As a recap. Make a class variable, reset that variable in ResetEffects, and use that variable in the logic of whatever hooks you use
-
 }

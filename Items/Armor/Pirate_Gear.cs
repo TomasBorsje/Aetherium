@@ -29,7 +29,7 @@ namespace Aetherium.Items.Armor
         {
             player.GetModPlayer<AetheriumModPlayer>().theCulling = true;
             player.GetModPlayer<AetheriumModPlayer>().deadMansPlate = true;
-            player.GetModPlayer<AetheriumModPlayer>().pirateHealthBuff = true;
+            player.statLifeMax += 15;
         }
 
         public override void AddRecipes()
