@@ -16,30 +16,26 @@ namespace Aetherium
         {
             if (npc.damage > 1 && npc.lifeMax > 1)
             {
-                if (npc.position.Y > Main.worldSurface && Main.dayTime)
+                if (npc.position.Y > Main.worldSurface)
                 {
-                    if (Main.rand.Next(250) == 0)
-                    {
-                        Item.NewItem(npc.getRect(), mod.ItemType("Jade_Quiver"));
-                    }
-                    if (Main.rand.Next(250) == 0)
+                    if (Main.rand.Next(750) == 0 && Main.dayTime)
                     {
                         Item.NewItem(npc.getRect(), mod.ItemType("Guardians_Courage"));
                     }
-                    if (!Main.dayTime && Main.rand.Next(250) == 0)
+                    if (!Main.dayTime && Main.rand.Next(750) == 0)
                     {
                         Item.NewItem(npc.getRect(), mod.ItemType("Vampire_Charm"));
                     }
                 }
                 if (npc.position.Y < Main.worldSurface)
                 {
-                    if (Main.rand.Next(250) == 0)
+                    if (Main.rand.Next(600) == 0)
                     {
                         Item.NewItem(npc.getRect(), mod.ItemType("Pirates_Coinpurse"));
                     }
                     if (Main.hardMode)
                     {
-                        if (Main.rand.Next(250) == 0)
+                        if (Main.rand.Next(600) == 0)
                         {
                             Item.NewItem(npc.getRect(), mod.ItemType("Giantslayer_Blade"));
                         }

@@ -20,6 +20,7 @@ namespace Aetherium
         public int cullingCount = 0;
         public bool unobtanium;
         public bool mana_consume;
+        public bool jarOfAetherium;
 
         public override void ResetEffects()
         {
@@ -32,6 +33,7 @@ namespace Aetherium
             deadMansPlate = false;
             unobtanium = false;
             mana_consume = false;
+            jarOfAetherium = false;
         }
 
         public override void PostUpdateEquips()
@@ -44,6 +46,11 @@ namespace Aetherium
             {
                 player.statDefense += (3 + Math.Abs(Convert.ToInt32((Math.Abs(player.velocity.X) + Math.Abs(player.velocity.Y) / 2) * 1.25)));
             }
+                if (player.velocity.Y > 0.4f && jarOfAetherium)
+                {
+                    player.velocity.Y = 0.4f;
+                    Dust.NewDust(player.position, player.width, player.height, DustID.BubbleBlock, Alpha: 50);
+                }
         }
 
         public override void OnHitNPCWithProj(Projectile proj, NPC target, int damage, float knockback, bool crit)

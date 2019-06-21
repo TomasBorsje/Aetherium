@@ -10,13 +10,13 @@ using Microsoft.Xna.Framework;
 
 namespace Aetherium.Items.Armor
 {
-    internal class Jade_Quiver : ModItem
+    internal class Jar_Of_Aetherium : ModItem
     {
 
         public override void SetStaticDefaults()
         {
-            DisplayName.SetDefault("Jade Quiver");
-            Tooltip.SetDefault("Consuming ammo restores a small amount of health\nDealing critical damage with an arrow heals for a larger amount\nIncreases ranged damage by 4%");
+            DisplayName.SetDefault("Jar of Aetherium [WIP]");
+            Tooltip.SetDefault("Holding space bar while falling allows you to float gracefully");
         }
         public override void SetDefaults()
         {
@@ -29,15 +29,13 @@ namespace Aetherium.Items.Armor
 
         public override void UpdateAccessory(Player player, bool hideVisual)
         {
-            player.GetModPlayer<AetheriumModPlayer>().jadeQuiver = true;
-            player.rangedDamage += 0.04f;
+            player.GetModPlayer<AetheriumModPlayer>().jarOfAetherium = true;
         }
 
         public override void AddRecipes()
         {
             ModRecipe recipe = new ModRecipe(mod);
-            recipe.AddIngredient(ItemID.WoodenArrow, 15);
-            recipe.AddIngredient(ItemID.Emerald, 5);
+            recipe.AddIngredient(mod.ItemType("Bar_Of_Aetherium"), 8);
             recipe.AddTile(TileID.WorkBenches);
             recipe.SetResult(this);
             recipe.AddRecipe();

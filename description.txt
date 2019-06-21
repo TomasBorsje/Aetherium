@@ -3,16 +3,16 @@ Aetherium is a mod focused around adding items, weapons, NPCs, and accessories w
 Warning: This mod is in VERY early development. Expect bugs or unbalance. Multiplayer may or may not work. Item icons, textures, & recipes are (mostly) placeholder.
 
 Changelog: 
+0.0.4.5: Added Aetherium Bow, Sword and Staff. (Staff shoots magic-missile boomerage type orbs) Also added Jar of Aetherium (WIP)
 0.0.4.4: Added Aetherium Axe & Pickaxe, and Aether Bolt, a water-bolt esque weapon where bolts speed up when bouncing. Removed Overload Staff.
 0.0.4.3: Added Giantslayer Blade.
 0.0.4.2: Added Aetherium Slime, Aetherium Bars, Blob of Aetherium, and changed recipes.
 0.0.4: Added Unobtanium and True Unobtanium (WIP)
-0.0.3.7: Added Pirate Gear, a combination of Dead Man's Plate and Pirate's Coinpurse. Craftable anywhere alongside 3 gold bars. 
 
 
 Current item additions:
 
-Aetherium Pickaxe / Axe: Basic tools. Will be able to be empowered in later versions into later-game versions.
+Aetherium Tier: Basic tools. Will be able to be empowered in later versions into later-game versions.
 
 Aether Bolt: Early-game water bolt-esque weapon where bolts speed up after bouncing. Craftable.
 

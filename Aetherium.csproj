@@ -55,6 +55,7 @@
     <Compile Include="Items\Armor\Flame_Lantern.cs" />
     <Compile Include="Items\Armor\Frost_Lantern.cs" />
     <Compile Include="Items\Armor\Guardians_Resolve.cs" />
+    <Compile Include="Items\Armor\Jar_Of_Aetherium.cs" />
     <Compile Include="Items\Armor\Jade_Quiver.cs" />
     <Compile Include="Items\Armor\Pirate_Gear.cs" />
     <Compile Include="Items\Armor\Pirates_Coinpurse.cs" />
@@ -64,10 +65,14 @@
     <Compile Include="Items\Crafting\Crafting_Materials.cs" />
     <Compile Include="Items\Tools\Aetherium_Axe.cs" />
     <Compile Include="Items\Tools\Aetherium_Pickaxe.cs" />
+    <Compile Include="Items\Weapons\Aetherium_Bow.cs" />
+    <Compile Include="Items\Weapons\Aetherium_Staff.cs" />
+    <Compile Include="Items\Weapons\Aetherium_Sword.cs" />
     <Compile Include="Items\Weapons\Giantslayer_Blade.cs" />
     <Compile Include="Items\Weapons\Test_Sword.cs" />
     <Compile Include="Items\Weapons\Aether_Bolt.cs" />
     <Compile Include="NPCs\Aetherium_Slime.cs" />
+    <Compile Include="Projectiles\Aetherium_Staff_Bolt.cs" />
     <Compile Include="Projectiles\Aether_Bolt_Projectile.cs" />
     <Compile Include="Projectiles\Overload_Orb.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

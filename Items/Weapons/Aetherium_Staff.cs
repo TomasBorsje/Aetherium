@@ -10,21 +10,21 @@ using Microsoft.Xna.Framework;
 
 namespace Aetherium.Items.Weapons
 {
-    public class Aether_Bolt : ModItem
+    public class Aetherium_Staff : ModItem
     {
         public override void SetStaticDefaults()
         {
-            DisplayName.SetDefault("Aether Bolt");
-            Tooltip.SetDefault("Fires an aether bolt that accelerates when it hits a block");
+            DisplayName.SetDefault("Aetherium Staff");
+            Tooltip.SetDefault("Fires an orb that returns to you after some time");
             Item.staff[item.type] = true; //this makes the useStyle animate as a staff instead of as a gun
         }
 
         public override void SetDefaults()
         {
-            item.damage = 13;
+            item.damage = 11;
             item.magic = true;
             item.mana = 12;
-            item.width = 40;
+            item.width = 42;
             item.height = 40;
             item.useTime = 25;
             item.useAnimation = 25;
@@ -35,14 +35,14 @@ namespace Aetherium.Items.Weapons
             item.rare = 9;
             item.UseSound = SoundID.Item20;
             item.autoReuse = true;
-            item.shoot = mod.ProjectileType("Aether_Bolt_Projectile");
-            item.shootSpeed = 7f;
+            item.shoot = mod.ProjectileType("Aetherium_Staff_Bolt");
+            item.shootSpeed = 8f;
         }
 
         public override void AddRecipes()
         {
             ModRecipe recipe = new ModRecipe(mod);
-            recipe.AddIngredient(mod.ItemType<Crafting.Bar_Of_Aetherium>(),5);
+            recipe.AddIngredient(mod.ItemType<Crafting.Bar_Of_Aetherium>(),8);
             recipe.AddTile(TileID.Anvils);
             recipe.SetResult(this);
             recipe.AddRecipe();

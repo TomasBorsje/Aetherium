@@ -15,8 +15,8 @@ namespace Aetherium.NPCs
 
         public override void SetDefaults()
         {
-            npc.width = 20;
-            npc.height = 40;
+            npc.width = 16;
+            npc.height = 14;
             npc.damage = 14;
             npc.defense = 3;
             npc.lifeMax = 42;

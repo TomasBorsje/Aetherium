@@ -36,6 +36,8 @@ namespace Aetherium.Items.Weapons
             item.shootSpeed = 8f;
         }
 
+
+
         //public override void AddRecipes()
         //{
         //    ModRecipe recipe = new ModRecipe(mod);
