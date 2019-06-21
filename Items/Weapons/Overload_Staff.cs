@@ -14,6 +14,7 @@ namespace Aetherium.Items.Weapons
     {
         public override void SetStaticDefaults()
         {
+            DisplayName.SetDefault("Overload Staff");
             Tooltip.SetDefault("Grapple hook that also functions as a weapon.\n~~ Scripting Test Weapon -- Not for practical use ~~");
             Item.staff[item.type] = true; //this makes the useStyle animate as a staff instead of as a gun
         }

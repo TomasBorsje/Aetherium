@@ -39,6 +39,7 @@ namespace Aetherium.Items.Armor
             recipe.AddIngredient(ItemID.HeartLantern, 1);
             recipe.AddIngredient(ItemID.FrostCore, 1);
             recipe.AddIngredient(ItemID.IceBlock, 25);
+            recipe.AddIngredient(mod.ItemType("Bar_Of_Aetherium"), 7);
             recipe.AddTile(TileID.Anvils);
             recipe.SetResult(this);
             recipe.AddRecipe();

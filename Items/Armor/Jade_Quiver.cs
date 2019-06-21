@@ -38,6 +38,7 @@ namespace Aetherium.Items.Armor
             ModRecipe recipe = new ModRecipe(mod);
             recipe.AddIngredient(ItemID.WoodenArrow, 15);
             recipe.AddIngredient(ItemID.Emerald, 5);
+            recipe.AddIngredient(mod.ItemType("Bar_Of_Aetherium"), 7);
             recipe.AddTile(TileID.WorkBenches);
             recipe.SetResult(this);
             recipe.AddRecipe();

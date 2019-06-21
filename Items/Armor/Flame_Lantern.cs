@@ -39,6 +39,7 @@ namespace Aetherium.Items.Armor
             ModRecipe recipe = new ModRecipe(mod);
             recipe.AddIngredient(ItemID.Chain, 2);
             recipe.AddIngredient(ItemID.Wood, 10);
+            recipe.AddIngredient(mod.ItemType("Bar_Of_Aetherium"), 7);
             recipe.AddIngredient(ItemID.IronBar, 5);
             recipe.AddTile(TileID.Anvils);
             recipe.SetResult(this);
@@ -47,6 +48,7 @@ namespace Aetherium.Items.Armor
             ModRecipe altrecipe = new ModRecipe(mod);
             altrecipe.AddIngredient(ItemID.Chain, 2);
             altrecipe.AddIngredient(ItemID.Wood, 10);
+            altrecipe.AddIngredient(mod.ItemType("Bar_Of_Aetherium"), 7);
             altrecipe.AddIngredient(ItemID.LeadBar, 5);
             altrecipe.AddTile(TileID.Anvils);
             altrecipe.SetResult(this);
