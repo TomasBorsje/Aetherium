@@ -37,6 +37,13 @@ namespace Aetherium
                     {
                         Item.NewItem(npc.getRect(), mod.ItemType("Pirates_Coinpurse"));
                     }
+                    if (Main.hardMode)
+                    {
+                        if (Main.rand.Next(250) == 0)
+                        {
+                            Item.NewItem(npc.getRect(), mod.ItemType("Giantslayer_Blade"));
+                        }
+                    }
                 }
             }
         }

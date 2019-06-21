@@ -62,6 +62,7 @@
     <Compile Include="Items\Armor\Unobtanium.cs" />
     <Compile Include="Items\Armor\Vampire_Charm.cs" />
     <Compile Include="Items\Crafting\Crafting_Materials.cs" />
+    <Compile Include="Items\Weapons\Giantslayer_Blade.cs" />
     <Compile Include="Items\Weapons\Test_Sword.cs" />
     <Compile Include="Items\Weapons\Overload_Staff.cs" />
     <Compile Include="NPCs\Aetherium_Slime.cs" />
