@@ -18,8 +18,8 @@ namespace Aetherium.NPCs
             npc.width = 20;
             npc.height = 40;
             npc.damage = 14;
-            npc.defense = 6;
-            npc.lifeMax = 40;
+            npc.defense = 3;
+            npc.lifeMax = 42;
             npc.HitSound = new Terraria.Audio.LegacySoundStyle(SoundID.Splash, 1);
             npc.DeathSound = new Terraria.Audio.LegacySoundStyle(SoundID.NPCDeath4.SoundId, 1);
             npc.value = 600f;
@@ -60,6 +60,7 @@ namespace Aetherium.NPCs
                 dust.scale *= 1f + Main.rand.Next(-30, 31) * 0.01f;
             }
             Item.NewItem(npc.getRect(), mod.ItemType("Blob_Of_Aetherium"), Main.rand.Next(1,4));
+            Item.NewItem(npc.getRect(), ItemID.Gel, Main.rand.Next(1, 4));
         }
 
         public override void HitEffect(int hitDirection, double damage)

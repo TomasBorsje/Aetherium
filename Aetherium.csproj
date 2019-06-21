@@ -62,10 +62,13 @@
     <Compile Include="Items\Armor\Unobtanium.cs" />
     <Compile Include="Items\Armor\Vampire_Charm.cs" />
     <Compile Include="Items\Crafting\Crafting_Materials.cs" />
+    <Compile Include="Items\Tools\Aetherium_Axe.cs" />
+    <Compile Include="Items\Tools\Aetherium_Pickaxe.cs" />
     <Compile Include="Items\Weapons\Giantslayer_Blade.cs" />
     <Compile Include="Items\Weapons\Test_Sword.cs" />
-    <Compile Include="Items\Weapons\Overload_Staff.cs" />
+    <Compile Include="Items\Weapons\Aether_Bolt.cs" />
     <Compile Include="NPCs\Aetherium_Slime.cs" />
+    <Compile Include="Projectiles\Aether_Bolt_Projectile.cs" />
     <Compile Include="Projectiles\Overload_Orb.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using Terraria.ID;
 using Terraria;
 using Terraria.ModLoader;
-
+using Microsoft.Xna.Framework;
 
 namespace Aetherium.Items.Weapons
 {
@@ -37,7 +37,7 @@ namespace Aetherium.Items.Weapons
         {
             if (!target.boss)
             {
-                target.StrikeNPC(Convert.ToInt32(Math.Round(target.life * 0.08f, 0)), item.knockBack, item.direction);
+                target.StrikeNPC(Convert.ToInt32(Math.Round((target.life + damage) * 0.08f, 0)), item.knockBack, item.direction);
             }
         }
 

@@ -14,7 +14,7 @@ namespace Aetherium.Items.Crafting
         public override void SetStaticDefaults()
         {
             DisplayName.SetDefault("Blob of Aetherium");
-            Tooltip.SetDefault("Light and wispy\nCombine 5 at cloud block");
+            Tooltip.SetDefault("Light and wispy\nCombine 5 at a cloud block");
         }
         public override void SetDefaults()
         {

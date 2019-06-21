@@ -3,6 +3,7 @@ Aetherium is a mod focused around adding items, weapons, NPCs, and accessories w
 Warning: This mod is in VERY early development. Expect bugs or unbalance. Multiplayer may or may not work. Item icons, textures, & recipes are (mostly) placeholder.
 
 Changelog: 
+0.0.4.4: Added Aetherium Axe & Pickaxe, and Aether Bolt, a water-bolt esque weapon where bolts speed up when bouncing. Removed Overload Staff.
 0.0.4.3: Added Giantslayer Blade.
 0.0.4.2: Added Aetherium Slime, Aetherium Bars, Blob of Aetherium, and changed recipes.
 0.0.4: Added Unobtanium and True Unobtanium (WIP)
@@ -10,6 +11,10 @@ Changelog:
 
 
 Current item additions:
+
+Aetherium Pickaxe / Axe: Basic tools. Will be able to be empowered in later versions into later-game versions.
+
+Aether Bolt: Early-game water bolt-esque weapon where bolts speed up after bouncing. Craftable.
 
 Giantslayer Blade: Deals a percentage of the enemy's current health as bonus damage. Hardmode-only underground drop.
 
@@ -34,7 +39,7 @@ WIP: (you will need cheat sheet or an item spawning mod for these)
 
 Test Sword: Sword that changes damage each time you enter your world.
 
-Overload Staff: Grapple hook that functions as a weapon.
+Overload Staff (REMOVED): Grapple hook that functions as a weapon.
 
 Unobtanium: Increases minion damage based on your current mana. 10% minion damage per 200 mana.
 

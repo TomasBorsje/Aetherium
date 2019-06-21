@@ -10,18 +10,18 @@ using Microsoft.Xna.Framework;
 
 namespace Aetherium.Items.Weapons
 {
-    public class Overload_Staff : ModItem
+    public class Aether_Bolt : ModItem
     {
         public override void SetStaticDefaults()
         {
-            DisplayName.SetDefault("Overload Staff");
-            Tooltip.SetDefault("Grapple hook that also functions as a weapon.\n~~ Scripting Test Weapon -- Not for practical use ~~");
+            DisplayName.SetDefault("Aether Bolt");
+            Tooltip.SetDefault("Fires an aether bolt that accelerates when it hits a block");
             Item.staff[item.type] = true; //this makes the useStyle animate as a staff instead of as a gun
         }
 
         public override void SetDefaults()
         {
-            item.damage = 20;
+            item.damage = 13;
             item.magic = true;
             item.mana = 12;
             item.width = 40;
@@ -35,8 +35,17 @@ namespace Aetherium.Items.Weapons
             item.rare = 2;
             item.UseSound = SoundID.Item20;
             item.autoReuse = true;
-            item.shoot = mod.ProjectileType("Overload_Orb");
-            item.shootSpeed = 16f;
+            item.shoot = mod.ProjectileType("Aether_Bolt_Projectile");
+            item.shootSpeed = 7f;
+        }
+
+        public override void AddRecipes()
+        {
+            ModRecipe recipe = new ModRecipe(mod);
+            recipe.AddIngredient(mod.ItemType<Crafting.Bar_Of_Aetherium>(),5);
+            recipe.AddTile(TileID.Anvils);
+            recipe.SetResult(this);
+            recipe.AddRecipe();
         }
     }
 }

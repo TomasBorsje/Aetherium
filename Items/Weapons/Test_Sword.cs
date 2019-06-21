@@ -14,7 +14,7 @@ namespace Aetherium.Items.Weapons
     {
         public override void SetStaticDefaults()
         {
-            DisplayName.SetDefault("Aetherium Sword");
+            DisplayName.SetDefault("Test Sword");
             Tooltip.SetDefault("Changes damage each time the world is reloaded.\n~~ Scripting Test Weapon -- Not for practical use ~~");
         }
         public override void SetDefaults()
