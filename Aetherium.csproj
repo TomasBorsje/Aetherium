@@ -62,6 +62,7 @@
     <Compile Include="Items\Armor\True_Unobtanium.cs" />
     <Compile Include="Items\Armor\Unobtanium.cs" />
     <Compile Include="Items\Armor\Vampire_Charm.cs" />
+    <Compile Include="Items\Consumables\Smoke_Bomb.cs" />
     <Compile Include="Items\Crafting\Crafting_Materials.cs" />
     <Compile Include="Items\Tools\Aetherium_Axe.cs" />
     <Compile Include="Items\Tools\Aetherium_Pickaxe.cs" />

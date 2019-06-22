@@ -36,6 +36,8 @@ namespace Aetherium
             jarOfAetherium = false;
         }
 
+        public int aetheriumJarTimer = 0;
+
         public override void PostUpdateEquips()
         {
             if (guardiansCourage)
@@ -46,11 +48,20 @@ namespace Aetherium
             {
                 player.statDefense += (3 + Math.Abs(Convert.ToInt32((Math.Abs(player.velocity.X) + Math.Abs(player.velocity.Y) / 2) * 1.25)));
             }
-                if (player.velocity.Y > 0.4f && jarOfAetherium)
+            if (player.velocity.Y > 0.4f && jarOfAetherium && aetheriumJarTimer < 90)
+            {
+                player.velocity.Y = 0.4f;
+                Dust.NewDust(player.position, player.width, player.height, DustID.BubbleBlock, Alpha: 50);
+                aetheriumJarTimer++;
+            }
+            else
+            {
+                if (player.velocity.Y == 0 && jarOfAetherium)
                 {
-                    player.velocity.Y = 0.4f;
-                    Dust.NewDust(player.position, player.width, player.height, DustID.BubbleBlock, Alpha: 50);
+                    aetheriumJarTimer = 0;
                 }
+            }
+
         }
 
         public override void OnHitNPCWithProj(Projectile proj, NPC target, int damage, float knockback, bool crit)

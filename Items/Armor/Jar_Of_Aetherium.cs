@@ -16,7 +16,7 @@ namespace Aetherium.Items.Armor
         public override void SetStaticDefaults()
         {
             DisplayName.SetDefault("Jar of Aetherium [WIP]");
-            Tooltip.SetDefault("Holding space bar while falling allows you to float gracefully\nCannot be toggled right now sadly");
+            Tooltip.SetDefault("Activates when falling, slowing your fall for a few seconds\nRecharges when you touch the ground");
         }
         public override void SetDefaults()
         {

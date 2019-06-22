@@ -34,7 +34,7 @@ namespace Aetherium.NPCs
         {
             if (Main.hardMode != true)
             {
-                return SpawnCondition.OverworldNightMonster.Chance * 0.13f;
+                return SpawnCondition.OverworldNightMonster.Chance * 0.15f;
             }
             else
             {
@@ -123,7 +123,8 @@ namespace Aetherium.NPCs
                 dust.scale *= 1f + Main.rand.Next(-30, 31) * 0.01f;
             }
             Item.NewItem(npc.getRect(), mod.ItemType("Blob_Of_Aetherium"), Main.rand.Next(2,5));
-            if (Main.rand.Next(100)==0)
+            Item.NewItem(npc.getRect(), mod.ItemType("Smoke_Bomb"), Main.rand.Next(0, 4));
+            if (Main.rand.Next(75)==0)
             {
                 Item.NewItem(npc.getRect(), mod.ItemType("Jar_Of_Aetherium"), 1);
             }

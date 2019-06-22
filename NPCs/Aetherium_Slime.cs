@@ -15,11 +15,11 @@ namespace Aetherium.NPCs
 
         public override void SetDefaults()
         {
-            npc.width = 16;
-            npc.height = 14;
-            npc.damage = 14;
+            npc.width = 32;
+            npc.height = 26;
+            npc.damage = 11;
             npc.defense = 3;
-            npc.lifeMax = 42;
+            npc.lifeMax = 35;
             npc.HitSound = new Terraria.Audio.LegacySoundStyle(SoundID.Splash, 1);
             npc.DeathSound = new Terraria.Audio.LegacySoundStyle(SoundID.NPCDeath4.SoundId, 1);
             npc.value = 600f;
@@ -33,12 +33,12 @@ namespace Aetherium.NPCs
 
         public override float SpawnChance(NPCSpawnInfo spawnInfo)
         {
-            return SpawnCondition.OverworldDaySlime.Chance * 0.2f;
+            return SpawnCondition.OverworldDaySlime.Chance * 0.15f;
         }
 
         public override void AI()
         {
-            if(npc.velocity.Y > 0.5f)
+            if (npc.velocity.Y > 0.5f)
             {
                 npc.velocity.Y = 0.5f;
                 Dust.NewDust(npc.position, npc.width, npc.height, DustID.BubbleBlock, Alpha: 50);
@@ -56,7 +56,7 @@ namespace Aetherium.NPCs
                 dust.velocity.Y = dust.velocity.Y + Main.rand.Next(-50, 51) * 0.01f;
                 dust.scale *= 1f + Main.rand.Next(-30, 31) * 0.01f;
             }
-            Item.NewItem(npc.getRect(), mod.ItemType("Blob_Of_Aetherium"), Main.rand.Next(1,4));
+            Item.NewItem(npc.getRect(), mod.ItemType("Blob_Of_Aetherium"), Main.rand.Next(1, 4));
             Item.NewItem(npc.getRect(), ItemID.Gel, Main.rand.Next(1, 4));
         }
 
@@ -75,7 +75,7 @@ namespace Aetherium.NPCs
             {
                 Item.NewItem(npc.getRect(), mod.ItemType("Blob_Of_Aetherium"));
             }
-            
+
         }
     }
 }
