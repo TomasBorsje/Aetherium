@@ -23,7 +23,7 @@ namespace Aetherium.Items.Weapons
         {
             item.damage = 11;
             item.magic = true;
-            item.mana = 12;
+            item.mana = 11;
             item.width = 42;
             item.height = 40;
             item.useTime = 25;

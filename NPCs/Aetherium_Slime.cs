@@ -10,7 +10,7 @@ namespace Aetherium.NPCs
         public override void SetStaticDefaults()
         {
             DisplayName.SetDefault("Aetherium Slime");
-            Main.npcFrameCount[npc.type] = Main.npcFrameCount[NPCID.Zombie];
+            Main.npcFrameCount[npc.type] = 4;
         }
 
         public override void SetDefaults()
@@ -33,17 +33,14 @@ namespace Aetherium.NPCs
 
         public override float SpawnChance(NPCSpawnInfo spawnInfo)
         {
-            return SpawnCondition.OverworldDaySlime.Chance * 0.4f;
+            return SpawnCondition.OverworldDaySlime.Chance * 0.2f;
         }
 
         public override void AI()
         {
-            if(npc.velocity.Y > 0.4f)
+            if(npc.velocity.Y > 0.5f)
             {
-                npc.velocity.Y = 0.4f;
-            }
-            if(npc.velocity.Y > 0f)
-            {
+                npc.velocity.Y = 0.5f;
                 Dust.NewDust(npc.position, npc.width, npc.height, DustID.BubbleBlock, Alpha: 50);
             }
         }

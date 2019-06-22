@@ -30,28 +30,32 @@ namespace Aetherium.Projectiles
             {
                 Dust.NewDust(projectile.position, projectile.width, projectile.height, DustID.BubbleBlock);
             }
-            if (projectile.ai[0] < 90)
+            if (Main.myPlayer == projectile.owner)
             {
-                Vector2 direction = (Main.MouseWorld - projectile.position);
-                direction.Normalize();
-                projectile.velocity = direction * 6.5f;
-            }
-            else if(hasReturned)
-            
-            {
-                Vector2 direction = (Main.player[projectile.owner].position - projectile.position);
-                direction.Normalize();
-                projectile.velocity = direction * 7.5f;
-            }
-            else
-            {
-
-                for(int i = 0; i<6; i++)
+                projectile.netUpdate = true;
+                if (projectile.ai[0] < 90)
                 {
-                   Dust.NewDust(projectile.position, projectile.width, projectile.height, DustID.BubbleBlock);
+                    Vector2 direction = (Main.MouseWorld - projectile.position);
+                    direction.Normalize();
+                    projectile.velocity = direction * 7.5f;
                 }
-                Main.PlaySound(SoundID.Drip, projectile.position);
-                hasReturned = true;
+                else if (hasReturned)
+
+                {
+                    Vector2 direction = (Main.player[projectile.owner].position - projectile.position);
+                    direction.Normalize();
+                    projectile.velocity = direction * 7.5f;
+                }
+                else
+                {
+
+                    for (int i = 0; i < 6; i++)
+                    {
+                        Dust.NewDust(projectile.position, projectile.width, projectile.height, DustID.BubbleBlock);
+                    }
+                    Main.PlaySound(SoundID.Drip, projectile.position);
+                    hasReturned = true;
+                }
             }
         }
 

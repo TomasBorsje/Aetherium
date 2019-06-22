@@ -16,29 +16,20 @@ namespace Aetherium.Items.Armor
         public override void SetStaticDefaults()
         {
             DisplayName.SetDefault("Jar of Aetherium [WIP]");
-            Tooltip.SetDefault("Holding space bar while falling allows you to float gracefully");
+            Tooltip.SetDefault("Holding space bar while falling allows you to float gracefully\nCannot be toggled right now sadly");
         }
         public override void SetDefaults()
         {
-            item.width = 32;
-            item.height = 32;
+            item.width = 20;
+            item.height = 26;
             item.accessory = true;
-            item.value = 25000;
-            item.rare = 4;
+            item.value = 250000;
+            item.rare = 9;
         }
 
         public override void UpdateAccessory(Player player, bool hideVisual)
         {
             player.GetModPlayer<AetheriumModPlayer>().jarOfAetherium = true;
-        }
-
-        public override void AddRecipes()
-        {
-            ModRecipe recipe = new ModRecipe(mod);
-            recipe.AddIngredient(mod.ItemType("Bar_Of_Aetherium"), 8);
-            recipe.AddTile(TileID.WorkBenches);
-            recipe.SetResult(this);
-            recipe.AddRecipe();
         }
     }
 }

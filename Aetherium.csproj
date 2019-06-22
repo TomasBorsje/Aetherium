@@ -71,6 +71,7 @@
     <Compile Include="Items\Weapons\Giantslayer_Blade.cs" />
     <Compile Include="Items\Weapons\Test_Sword.cs" />
     <Compile Include="Items\Weapons\Aether_Bolt.cs" />
+    <Compile Include="NPCs\Aetherium_Elemental.cs" />
     <Compile Include="NPCs\Aetherium_Slime.cs" />
     <Compile Include="Projectiles\Aetherium_Staff_Bolt.cs" />
     <Compile Include="Projectiles\Aether_Bolt_Projectile.cs" />
