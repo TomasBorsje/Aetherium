@@ -1,17 +1,26 @@
 [c/7CE4FF:Aetherium] is a mod focused around adding items, weapons, NPCs, and accessories with interesting mechanics.
 
 [c/FF4319:Warning: This mod is in VERY early development.] Expect bugs or unbalance. Multiplayer may or may not work. Item icons, textures, & recipes are (mostly) placeholder.
-
+[c/F4E842:~~ Thank you for 800+ downloads! ~~]
 Changelog: 
+0.0.5: Added Mana Leech, Aether Flower, and Wriggle's Lantern.
 0.0.4.8: Added Smoke Bombs. Drops from Aetherium elementals. Use to dash in a direction and gain shadow dodge for 1sec.
 0.0.4.7: Fixed Aetherium Slime having a buggy sprite.
 0.0.4.6: Added Aetherium Elemental, a nighttime enemy that VERY rarely also spawns at day. Drops Jar of Aetherium. Aetherium Staff now works in multiplayer(!) Nerfed spawn rate of Aetherium Slime.
 0.0.4.5: Added Aetherium Bow, Sword and Staff. (Staff shoots magic-missile boomerang type orbs) Also added Jar of Aetherium (WIP)
 0.0.4.4: Added Aetherium Axe & Pickaxe, and Aether Bolt, a water-bolt esque weapon where bolts speed up when bouncing. Removed Overload Staff.
 
-
-
 Current item additions:
+
+Jar of Aetherium: Slows your fall for a few seconds while falling. Drops from Aether Elementals.
+
+Mana Leech: Can consume 30 mana to deal an additional 20 damage each time you damage an enemy.
+
+Aether Flower: Increases minion damage by 10% for every 200 current mana you have.
+
+Wriggle's Lantern: Minion damage sets enemies aflame in fire, frostfire, shadowflame, and cursed inferno.
+
+Smoke Bomb: Dash forward and gain 'Shadow Dodge' for 1 second. Drops from Aether Elementals.
 
 Aetherium Tier: Basic tools. Will be able to be empowered in later versions into later-game versions. Made from Aetherium Bars, which are made from Blobs of Aetherium.
 
@@ -41,7 +50,3 @@ WIP: (you will need cheat sheet or an item spawning mod for these)
 Test Sword: Sword that changes damage each time you enter your world.
 
 Overload Staff (REMOVED): Grapple hook that functions as a weapon.
-
-Unobtanium: Increases minion damage based on your current mana. 10% minion damage per 200 mana.
-
-True Unobtanium: Dealing non-minion damage can consume 30 mana to deal an additional 20 damage.

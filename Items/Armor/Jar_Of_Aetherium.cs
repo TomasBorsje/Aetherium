@@ -15,7 +15,7 @@ namespace Aetherium.Items.Armor
 
         public override void SetStaticDefaults()
         {
-            DisplayName.SetDefault("Jar of Aetherium [WIP]");
+            DisplayName.SetDefault("Jar of Aetherium");
             Tooltip.SetDefault("Activates when falling, slowing your fall for a few seconds\nRecharges when you touch the ground");
         }
         public override void SetDefaults()
