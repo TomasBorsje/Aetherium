@@ -32,7 +32,7 @@ namespace Aetherium.Items.Consumables
 
         public override bool UseItem(Player player)
         {
-            if(Math.Abs(player.velocity.X) < 12)
+            if (Math.Abs(player.velocity.X) < 12)
             {
                 for (int i = 0; i < 50; i++)
                 {
@@ -42,6 +42,10 @@ namespace Aetherium.Items.Consumables
                 player.AddBuff(BuffID.Invisibility, 30);
                 player.AddBuff(BuffID.ShadowDodge, 30);
             }
+            else
+            {
+                item.stack++;
+            }            
             return true;
         }
     }

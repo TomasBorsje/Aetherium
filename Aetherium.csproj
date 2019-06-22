@@ -53,14 +53,15 @@
     <Compile Include="Items\Armor\Cursed_Lantern.cs" />
     <Compile Include="Items\Armor\Dead_Mans_Plate.cs" />
     <Compile Include="Items\Armor\Flame_Lantern.cs" />
+    <Compile Include="Items\Armor\Wriggles_Lantern.cs" />
     <Compile Include="Items\Armor\Frost_Lantern.cs" />
     <Compile Include="Items\Armor\Guardians_Resolve.cs" />
     <Compile Include="Items\Armor\Jar_Of_Aetherium.cs" />
     <Compile Include="Items\Armor\Jade_Quiver.cs" />
     <Compile Include="Items\Armor\Pirate_Gear.cs" />
     <Compile Include="Items\Armor\Pirates_Coinpurse.cs" />
-    <Compile Include="Items\Armor\True_Unobtanium.cs" />
-    <Compile Include="Items\Armor\Unobtanium.cs" />
+    <Compile Include="Items\Armor\Mana_Leech.cs" />
+    <Compile Include="Items\Armor\Aether_Flower.cs" />
     <Compile Include="Items\Armor\Vampire_Charm.cs" />
     <Compile Include="Items\Consumables\Smoke_Bomb.cs" />
     <Compile Include="Items\Crafting\Crafting_Materials.cs" />

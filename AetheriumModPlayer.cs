@@ -1,8 +1,15 @@
+using Microsoft.Xna.Framework;
+using Microsoft.Xna.Framework.Graphics;
+using System;
+using System.Collections.Generic;
+using System.IO;
+using System.Linq;
 using Terraria;
+using Terraria.DataStructures;
+using Terraria.GameInput;
 using Terraria.ID;
 using Terraria.ModLoader;
-using System;
-using Microsoft.Xna.Framework;
+using Terraria.ModLoader.IO;
 
 namespace Aetherium
 {
@@ -21,6 +28,8 @@ namespace Aetherium
         public bool unobtanium;
         public bool mana_consume;
         public bool jarOfAetherium;
+        public bool cosmicShackle;
+        public bool cosmicHeart;
 
         public override void ResetEffects()
         {
@@ -37,6 +46,7 @@ namespace Aetherium
         }
 
         public int aetheriumJarTimer = 0;
+        
 
         public override void PostUpdateEquips()
         {
@@ -125,8 +135,11 @@ namespace Aetherium
             }
         }
 
+        
+
         public override void OnHitNPC(Item item, NPC target, int damage, float knockback, bool crit)
         {
+            
             if (mana_consume && !item.summon && target.lifeMax > 1 && target.damage > 1)
             {
                 if (player.CheckMana(30, true))
@@ -185,6 +198,12 @@ namespace Aetherium
                     player.HealEffect(vampireCharmCharge);
                 }
                 vampireCharmCharge = 0;
+            }
+            if (cosmicShackle)
+            {
+                int manaGain = Convert.ToInt32(damage * 1.5);
+                player.statMana += manaGain;
+                player.ManaEffect(manaGain);
             }
         }
 

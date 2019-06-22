@@ -14,7 +14,7 @@ namespace Aetherium.Items.Armor
         public override void SetStaticDefaults()
         {
             DisplayName.SetDefault("Pirate Gear");
-            Tooltip.SetDefault("Increases defense by 3\nIncreases defense based on how fast you are moving\nEvery tenth enemy killed drops bonus money\nIncreases max health by 15");
+            Tooltip.SetDefault("Increases defense by 3\nIncreases defense based on how fast you are moving\nEvery tenth enemy killed drops bonus money");
         }
         public override void SetDefaults()
         {
@@ -39,6 +39,13 @@ namespace Aetherium.Items.Armor
             recipe.AddIngredient(ItemID.GoldBar, 3);
             recipe.SetResult(this);
             recipe.AddRecipe();
+
+            ModRecipe altrecipe = new ModRecipe(mod);
+            altrecipe.AddIngredient(mod.ItemType("Pirates_Coinpurse"), 1);
+            altrecipe.AddIngredient(mod.ItemType("Dead_Mans_Plate"), 1);
+            altrecipe.AddIngredient(ItemID.PlatinumBar, 3);
+            altrecipe.SetResult(this);
+            altrecipe.AddRecipe();
         }
     }
 

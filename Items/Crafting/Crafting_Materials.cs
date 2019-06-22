@@ -15,6 +15,7 @@ namespace Aetherium.Items.Crafting
         {
             DisplayName.SetDefault("Blob of Aetherium");
             Tooltip.SetDefault("Light and wispy\nCombine 5 at a cloud block");
+            ItemID.Sets.ItemNoGravity[item.type] = true;
         }
         public override void SetDefaults()
         {
@@ -31,6 +32,8 @@ namespace Aetherium.Items.Crafting
         {
             DisplayName.SetDefault("Aetherium Bar");
             Tooltip.SetDefault("Almost lighter than air");
+            ItemID.Sets.ItemNoGravity[item.type] = true;
+
         }
         public override void SetDefaults()
         {
