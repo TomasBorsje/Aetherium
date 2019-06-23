@@ -50,6 +50,7 @@
     <Compile Include="Aetherium.cs" />
     <Compile Include="AetheriumModPlayer.cs" />
     <Compile Include="GlobalNPCLoot.cs" />
+    <Compile Include="Items\Armor\Windfury_Charm.cs" />
     <Compile Include="Items\Armor\Cursed_Lantern.cs" />
     <Compile Include="Items\Armor\Dead_Mans_Plate.cs" />
     <Compile Include="Items\Armor\Flame_Lantern.cs" />

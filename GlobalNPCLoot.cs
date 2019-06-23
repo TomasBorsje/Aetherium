@@ -16,6 +16,13 @@ namespace Aetherium
         {
             if (npc.damage > 1 && npc.lifeMax > 1)
             {
+                if (Main.player[Player.FindClosest(npc.position, npc.width, npc.height)].ZoneJungle)
+                {
+                    if(Main.rand.Next(250) == 0)
+                    {
+                        Item.NewItem(npc.getRect(), mod.ItemType("Windfury_Charm"));
+                    }
+                }
                 if (npc.position.Y > Main.worldSurface)
                 {
                     if (Main.rand.Next(750) == 0 && Main.dayTime)

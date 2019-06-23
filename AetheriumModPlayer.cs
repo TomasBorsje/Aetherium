@@ -30,6 +30,7 @@ namespace Aetherium
         public bool jarOfAetherium;
         public bool cosmicShackle;
         public bool cosmicHeart;
+        public bool windfury;
 
         public override void ResetEffects()
         {
@@ -43,6 +44,7 @@ namespace Aetherium
             unobtanium = false;
             mana_consume = false;
             jarOfAetherium = false;
+            windfury = false;
         }
 
         public int aetheriumJarTimer = 0;
@@ -76,6 +78,10 @@ namespace Aetherium
 
         public override void OnHitNPCWithProj(Projectile proj, NPC target, int damage, float knockback, bool crit)
         {
+            if(windfury && Main.rand.Next(13) == 0)
+            {
+                target.StrikeNPC(damage + Convert.ToInt32(target.defense * (Main.expertMode ? 3/4 : 2/2)), knockback, proj.direction);
+            }
             if (target.life < 1 && theCulling && target.lifeMax > 1 && target.damage > 1)
             {
                 if (cullingCount >= 10)
@@ -139,7 +145,10 @@ namespace Aetherium
 
         public override void OnHitNPC(Item item, NPC target, int damage, float knockback, bool crit)
         {
-            
+            if (windfury && Main.rand.Next(13) == 0)
+            {
+                target.StrikeNPC(damage, knockback, item.direction);
+            }
             if (mana_consume && !item.summon && target.lifeMax > 1 && target.damage > 1)
             {
                 if (player.CheckMana(30, true))

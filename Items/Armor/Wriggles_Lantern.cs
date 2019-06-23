@@ -31,7 +31,7 @@ namespace Aetherium.Items.Armor
             player.GetModPlayer<AetheriumModPlayer>().heartOfFrost = true;
             player.GetModPlayer<AetheriumModPlayer>().flameLantern = true;
             player.GetModPlayer<AetheriumModPlayer>().cursedLantern = true;
-            player.maxMinions += 3;
+            player.maxMinions += 2;
             player.minionDamage += 0.2f;
         }
 

@@ -15,7 +15,7 @@ namespace Aetherium.Items.Armor
         public override void SetStaticDefaults()
         {
             DisplayName.SetDefault("Flame Lantern");
-            Tooltip.SetDefault("Causes summon damage to set enemies alight\nIncreases your max number of minions\nIncreases minion damage by 7%");
+            Tooltip.SetDefault("Causes summon damage to set enemies alight\nIncreases minion damage by 7%");
         }
         public override void SetDefaults()
         {
@@ -28,9 +28,7 @@ namespace Aetherium.Items.Armor
 
         public override void UpdateAccessory(Player player, bool hideVisual)
         {
-            // To assign the player the frostBurnSummon effect, we can't do player.frostBurnSummon = true because Player doesn't have frostBurnSummon. Be sure to remember to call the GetModPlayer method to retrieve the ModPlayer instance attached to the specified Player.
             player.GetModPlayer<AetheriumModPlayer>().flameLantern = true;
-            player.maxMinions += 1;
             player.minionDamage += 0.07f;
         }
 
