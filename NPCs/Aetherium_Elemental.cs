@@ -18,7 +18,7 @@ namespace Aetherium.NPCs
         {
             npc.width = 30;
             npc.height = 75;
-            npc.damage = 20;
+            npc.damage = 14;
             npc.defense = 5;
             npc.lifeMax = 53;
             npc.HitSound = new Terraria.Audio.LegacySoundStyle(SoundID.Splash, 1);

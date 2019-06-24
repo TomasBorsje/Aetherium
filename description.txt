@@ -3,13 +3,16 @@
 [c/FF4319:Warning: This mod is in VERY early development.] Expect bugs or unbalance. Multiplayer may or may not work. Item icons, textures, & recipes are (mostly) placeholder.
 [c/F4E842:~~ Thank you for 1000+ downloads! ~~]
 [c/2F4ACE:Changelog]: 
+[c/7CE4FF:0.0.5.1]: Players now spawn with new "[c/7CE4FF:Aether Wisp in a Bottle]" pet as a thank you for downloading. Added Pocket Cyclone & Heavenly Whisper.
 [c/7CE4FF:0.0.5.1]: Added Windfury Charm, updated mod icon & description, nerfed Flame Lantern.
 [c/7CE4FF:0.0.5]: Added Mana Leech, Aether Flower, and Wriggle's Lantern.
 [c/7CE4FF:0.0.4.8]: Added Smoke Bombs. Drops from Aetherium elementals. Use to dash in a direction and gain shadow dodge for 1sec.
 [c/7CE4FF:0.0.4.7]: Fixed Aetherium Slime having a buggy sprite.
-[c/7CE4FF:0.0.4.6]: Added Aetherium Elemental, a nighttime enemy that VERY rarely also spawns at day. Drops Jar of Aetherium. Aetherium Staff now works in multiplayer(!) Nerfed spawn rate of Aetherium Slime.
 
 [c/2F4ACE:Current item additions]:
+[c/7CE4FF:Heavenly Whisper]: Mage weapon that rapidly shoots damaging skulls. Crafted from Book of Skulls.
+[c/7CE4FF:Pocket Cyclone]: Enemies that damage you are flung into the air and grant you a speed boost. Drops in the snow biome.
+[c/7CE4FF:Aether Wisp in a Bottle]: Wisp pet that all players spawn with as a thank you for downloading Aetherium.
 [c/7CE4FF:Windfury Charm]: Your attacks have a small chance to deal damage twice. Drops from enemies in the jungle.
 [c/7CE4FF:Jar of Aetherium]: Slows your fall for a few seconds while falling. Drops from Aether Elementals.
 [c/7CE4FF:Mana Leech]: Can consume 30 mana to deal an additional 20 damage each time you damage an enemy.

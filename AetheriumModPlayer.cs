@@ -48,7 +48,16 @@ namespace Aetherium
         }
 
         public int aetheriumJarTimer = 0;
-        
+        public bool aetherWisp;
+        public bool pocketCyclone;
+
+        public override void SetupStartInventory(IList<Item> items)
+        {
+            Item wisp = new Item();
+            wisp.SetDefaults(mod.ItemType("Aether_Wisp"));
+            wisp.stack = 1;
+            items.Add(wisp);
+        }
 
         public override void PostUpdateEquips()
         {
@@ -213,6 +222,15 @@ namespace Aetherium
                 int manaGain = Convert.ToInt32(damage * 1.5);
                 player.statMana += manaGain;
                 player.ManaEffect(manaGain);
+            }
+        }
+
+        public override void OnHitByNPC(NPC npc, int damage, bool crit)
+        {
+            if (pocketCyclone && !npc.boss)
+            {
+                npc.velocity += new Vector2(0, -17);
+                player.AddBuff(BuffID.Swiftness, 120);
             }
         }
 

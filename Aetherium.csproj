@@ -49,7 +49,9 @@
   <ItemGroup>
     <Compile Include="Aetherium.cs" />
     <Compile Include="AetheriumModPlayer.cs" />
+    <Compile Include="Buffs\Aether_Wisp.cs" />
     <Compile Include="GlobalNPCLoot.cs" />
+    <Compile Include="Items\Armor\Pocket_Cyclone.cs" />
     <Compile Include="Items\Armor\Windfury_Charm.cs" />
     <Compile Include="Items\Armor\Cursed_Lantern.cs" />
     <Compile Include="Items\Armor\Dead_Mans_Plate.cs" />
@@ -64,11 +66,13 @@
     <Compile Include="Items\Armor\Mana_Leech.cs" />
     <Compile Include="Items\Armor\Aether_Flower.cs" />
     <Compile Include="Items\Armor\Vampire_Charm.cs" />
+    <Compile Include="Items\Consumables\Aether_Wisp.cs" />
     <Compile Include="Items\Consumables\Smoke_Bomb.cs" />
     <Compile Include="Items\Crafting\Crafting_Materials.cs" />
     <Compile Include="Items\Tools\Aetherium_Axe.cs" />
     <Compile Include="Items\Tools\Aetherium_Pickaxe.cs" />
     <Compile Include="Items\Weapons\Aetherium_Bow.cs" />
+    <Compile Include="Items\Weapons\Heavenly_Whisper.cs" />
     <Compile Include="Items\Weapons\Aetherium_Staff.cs" />
     <Compile Include="Items\Weapons\Aetherium_Sword.cs" />
     <Compile Include="Items\Weapons\Giantslayer_Blade.cs" />
@@ -77,8 +81,10 @@
     <Compile Include="NPCs\Aetherium_Elemental.cs" />
     <Compile Include="NPCs\Aetherium_Slime.cs" />
     <Compile Include="Projectiles\Aetherium_Staff_Bolt.cs" />
+    <Compile Include="Projectiles\Heavenly_Whisper_Bolt.cs" />
     <Compile Include="Projectiles\Aether_Bolt_Projectile.cs" />
     <Compile Include="Projectiles\Overload_Orb.cs" />
+    <Compile Include="Projectiles\Pets\Aether_Wisp.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
