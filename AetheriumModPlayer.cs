@@ -50,6 +50,8 @@ namespace Aetherium
         public int aetheriumJarTimer = 0;
         public bool aetherWisp;
         public bool pocketCyclone;
+        public bool frozenInTime;
+        int frozenTimer;
 
         public override void SetupStartInventory(IList<Item> items)
         {
@@ -82,7 +84,46 @@ namespace Aetherium
                     aetheriumJarTimer = 0;
                 }
             }
+            if (frozenInTime)
+            {
+                if (Main.myPlayer == player.whoAmI)
+                {
+                    player.statDefense += 200;
+                }
+            }
 
+        }
+
+        public override void PostUpdate()
+        {
+
+        }
+
+        public override void PreUpdateMovement()
+        {
+            if (frozenInTime)
+            {
+                if (frozenTimer > 120)
+                {
+                    frozenTimer = 0;
+                    frozenInTime = false;
+                }
+                else
+                {
+                    if (Main.myPlayer == player.whoAmI)
+                    {
+                        frozenTimer++;
+                        player.velocity = new Vector2(0, 0);
+                        player.AddBuff(BuffID.Cursed, 2);
+                        
+                    }
+                    for (int i = 0; i < 3; i++)
+                    {
+                        Dust.NewDust(player.position, player.width, player.head, DustID.Electric);
+                    }
+
+                }
+            }
         }
 
         public override void OnHitNPCWithProj(Projectile proj, NPC target, int damage, float knockback, bool crit)

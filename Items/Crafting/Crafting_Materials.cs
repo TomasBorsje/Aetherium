@@ -52,4 +52,29 @@ namespace Aetherium.Items.Crafting
             recipe.AddRecipe();
         }
     }
+    public class Bar_Of_Viscera : ModItem
+    {
+        public override void SetStaticDefaults()
+        {
+            DisplayName.SetDefault("Bar of Viscera");
+            Tooltip.SetDefault("It's staring back at you..");
+
+        }
+        public override void SetDefaults()
+        {
+            item.width = 30;
+            item.height = 28;
+            item.value = 250;
+            item.maxStack = 99;
+            item.rare = 4;
+        }
+        public override void AddRecipes()
+        {
+            ModRecipe recipe = new ModRecipe(mod);
+            recipe.AddIngredient(mod.ItemType("Viscera_Block_Item"), 5);
+            recipe.AddTile(TileID.DemonAltar);
+            recipe.SetResult(this);
+            recipe.AddRecipe();
+        }
+    }
 }

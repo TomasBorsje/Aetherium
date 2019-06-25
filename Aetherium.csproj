@@ -67,8 +67,10 @@
     <Compile Include="Items\Armor\Aether_Flower.cs" />
     <Compile Include="Items\Armor\Vampire_Charm.cs" />
     <Compile Include="Items\Consumables\Aether_Wisp.cs" />
+    <Compile Include="Items\Consumables\Hourglass.cs" />
     <Compile Include="Items\Consumables\Smoke_Bomb.cs" />
     <Compile Include="Items\Crafting\Crafting_Materials.cs" />
+    <Compile Include="Items\Tiles\Viscera_Block_Item.cs" />
     <Compile Include="Items\Tools\Aetherium_Axe.cs" />
     <Compile Include="Items\Tools\Aetherium_Pickaxe.cs" />
     <Compile Include="Items\Weapons\Aetherium_Bow.cs" />
@@ -86,6 +88,7 @@
     <Compile Include="Projectiles\Overload_Orb.cs" />
     <Compile Include="Projectiles\Pets\Aether_Wisp.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Tiles\Viscera.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Buffs\Low_Gravity.png" />
