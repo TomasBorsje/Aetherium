@@ -26,7 +26,7 @@ namespace Aetherium.Items.Weapons
             item.useTime = 24;
             item.useAnimation = 24;
             item.useStyle = 5;
-            item.noMelee = true; //so the item's animation doesn't do damage
+            item.noMelee = true;
             item.knockBack = 5;
             item.value = 10000;
             item.rare = 9;
