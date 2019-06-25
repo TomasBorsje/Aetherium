@@ -5,7 +5,6 @@ using System;
 
 namespace Aetherium.NPCs
 {
-    // Party Zombie is a pretty basic clone of a vanilla NPC. To learn how to further adapt vanilla NPC behaviors, see https://github.com/blushiemagic/tModLoader/wiki/Advanced-Vanilla-Code-Adaption#example-npc-npc-clone-with-modified-projectile-hoplite
     public class Aetherium_Elemental : ModNPC
     {
         public override void SetStaticDefaults()
@@ -107,8 +106,6 @@ namespace Aetherium.NPCs
                 npc.velocity += new Microsoft.Xna.Framework.Vector2(npc.direction * 0.2f, 0);
             }
             npc.ai[0]++;
-         //   npc.HealEffect(Convert.ToInt32(npc.ai[0]));
-         //   npc.velocity.Y += (float)Math.Sin(npc.ai[0])*1f;
         }
 
         public override void NPCLoot()
