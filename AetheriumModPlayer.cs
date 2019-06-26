@@ -45,6 +45,7 @@ namespace Aetherium
             mana_consume = false;
             jarOfAetherium = false;
             windfury = false;
+            pocketCyclone = false;
         }
 
         public int aetheriumJarTimer = 0;
