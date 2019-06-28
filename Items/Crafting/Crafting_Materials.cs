@@ -71,7 +71,7 @@ namespace Aetherium.Items.Crafting
         public override void AddRecipes()
         {
             ModRecipe recipe = new ModRecipe(mod);
-            recipe.AddIngredient(mod.ItemType("Viscera_Block_Item"), 5);
+            recipe.AddIngredient(mod.ItemType("Viscera_Block_Item"), 4);
             recipe.AddTile(TileID.DemonAltar);
             recipe.SetResult(this);
             recipe.AddRecipe();
@@ -100,7 +100,7 @@ namespace Aetherium.Items.Crafting
             recipe.AddIngredient(mod.ItemType("Bar_Of_Aetherium"), 1);
             recipe.AddIngredient(ItemID.PixieDust, 1);
             recipe.AddIngredient(ItemID.Cloud, 10);
-            recipe.AddTile(TileID.MythrilAnvil);
+            recipe.AddTile(TileID.AdamantiteForge);
             recipe.AddTile(TileID.SkyMill);
             recipe.SetResult(this);
             recipe.AddRecipe();

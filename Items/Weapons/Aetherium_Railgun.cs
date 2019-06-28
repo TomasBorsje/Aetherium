@@ -7,6 +7,7 @@ using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
 using Microsoft.Xna.Framework;
+using Microsoft.Xna.Framework.Graphics;
 
 namespace Aetherium.Items.Weapons
 {
@@ -20,7 +21,7 @@ namespace Aetherium.Items.Weapons
 
         public override void SetDefaults()
         {
-            item.damage = 140;
+            item.damage = 110;
             item.width = 70;
             item.height = 22;
             item.useTime = 40;
@@ -35,7 +36,7 @@ namespace Aetherium.Items.Weapons
             item.autoReuse = true;
             item.shoot = 10;
             item.shootSpeed = 40f;
-            item.ammo = AmmoID.Bullet;
+            item.useAmmo = AmmoID.Bullet;
         }
 
         public override bool Shoot(Player player, ref Vector2 position, ref float speedX, ref float speedY, ref int type, ref int damage, ref float knockBack)
@@ -45,13 +46,37 @@ namespace Aetherium.Items.Weapons
     return true; // return true to allow tmodloader to call Projectile.NewProjectile as normal
 }
 
+
+
         public override void AddRecipes()
         {
             ModRecipe recipe = new ModRecipe(mod);
             recipe.AddIngredient(mod.ItemType<Crafting.True_Aetherium_Bar>(),12);
             recipe.AddTile(TileID.MythrilAnvil);
+            recipe.AddTile(TileID.SkyMill);
             recipe.SetResult(this);
             recipe.AddRecipe();
+        }
+
+        public override void PostDrawInWorld(SpriteBatch spriteBatch, Color lightColor, Color alphaColor, float rotation, float scale, int whoAmI)
+        {
+            Texture2D texture = mod.GetTexture("Items/Weapons/Aetherium_Railgun_Glow");
+            spriteBatch.Draw
+            (
+                texture,
+                new Vector2
+                (
+                    item.position.X - Main.screenPosition.X + item.width * 0.5f,
+                    item.position.Y - Main.screenPosition.Y + item.height - texture.Height * 0.5f + 2f
+                ),
+                new Rectangle(0, 0, texture.Width, texture.Height),
+                Color.White,
+                rotation,
+                texture.Size() * 0.5f,
+                scale,
+                SpriteEffects.None,
+                0f
+            );
         }
     }
 }

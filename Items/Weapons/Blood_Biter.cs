@@ -15,12 +15,12 @@ namespace Aetherium.Items.Weapons
         public override void SetStaticDefaults()
         {
             DisplayName.SetDefault("Blood Biter");
-            Tooltip.SetDefault("Turns wooden arrows into hungry arrows that inflict strong knockback");
+            Tooltip.SetDefault("Arrows fired inflict strong knockback");
         }
 
         public override void SetDefaults()
         {
-            item.damage = 11;
+            item.damage = 36;
             item.ranged = true;
             item.width = 16;
             item.height = 32;
@@ -52,7 +52,7 @@ namespace Aetherium.Items.Weapons
         public override void AddRecipes()
         {
             ModRecipe recipe = new ModRecipe(mod);
-            recipe.AddIngredient(mod.ItemType<Crafting.Bar_Of_Viscera>(),8);
+            recipe.AddIngredient(mod.ItemType<Crafting.Bar_Of_Viscera>(),11);
             recipe.AddTile(TileID.Anvils);
             recipe.SetResult(this);
             recipe.AddRecipe();

@@ -1,8 +1,9 @@
 [c/7CE4FF:Aetherium] is a mod focused around adding items, weapons, NPCs, and accessories with interesting mechanics, rather than more of the same.
 
 [c/FF4319:Warning: This mod is in early development.] Expect bugs or unbalance. Multiplayer may or may not work. Item icons, textures, & recipes are (mostly) placeholder.
-[c/F4E842:~~ Thank you for 1500+ downloads! ~~]
+[c/F4E842:~~ Thank you for 2500+ downloads! ~~]
 [c/2F4ACE:Changelog]: 
+[c/FF4319:0.0.5.5]: Added Viscera, a post-WoF "ore", and a pickaxe and bow made of it. Added True Aetherium, craftable, True Aetherium Railgun & True Aetherium Pick. Will expand on these materials next update.
 [c/FF4319:0.0.5.4]: Fixed pocket cyclone effect not stopping after unequipping. (Sorry!)
 [c/7CE4FF:0.0.5.3]: Added "Unstable Warp Bubble", a craftable item that freezes you in time, massively increasing your defense. Added Viscera (unobtainable, WIP ore).
 [c/7CE4FF:0.0.5.2]: Players now spawn with new "[c/7CE4FF:Aether Wisp in a Bottle]" pet as a thank you for downloading. Added Pocket Cyclone & Heavenly Whisper.

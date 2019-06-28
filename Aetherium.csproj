@@ -73,6 +73,8 @@
     <Compile Include="Items\Crafting\Crafting_Materials.cs" />
     <Compile Include="Items\Tiles\Viscera_Block_Item.cs" />
     <Compile Include="Items\Tools\Aetherium_Axe.cs" />
+    <Compile Include="Items\Tools\Hungry_Pickaxe.cs" />
+    <Compile Include="Items\Tools\True_Aetherium_Pickaxe.cs" />
     <Compile Include="Items\Tools\Aetherium_Pickaxe.cs" />
     <Compile Include="Items\Weapons\Blood_Biter.cs" />
     <Compile Include="Items\Weapons\Aetherium_Bow.cs" />
