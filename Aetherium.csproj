@@ -5,20 +5,12 @@
     <AssemblyName>Aetherium</AssemblyName>
     <TargetFramework>net45</TargetFramework>
     <PlatformTarget>x86</PlatformTarget>
-    <LangVersion>latest</LangVersion>
+    <LangVersion>7.3</LangVersion>
   </PropertyGroup>
-  <ItemGroup>
-    <Compile Remove="Items\Armor - Copy\**" />
-    <EmbeddedResource Remove="Items\Armor - Copy\**" />
-    <None Remove="Items\Armor - Copy\**" />
-  </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Items\Crafting\" />
-    <Folder Include="Items\Tools\" />
-    <Folder Include="Items\Tiles\" />
-    <Folder Include="Items\Weapons\" />
-  </ItemGroup>
   <Target Name="BuildMod" AfterTargets="Build">
-    <Exec Command="&quot;$(tMLBuildServerPath)&quot; -build $(ProjectDir) -eac $(TargetPath) -define $(DefineConstants) -unsafe $(AllowUnsafeBlocks)" />
+    <Exec Command="&quot;$(tMLBuildServerPath)&quot; -build $(ProjectDir) -eac $(TargetPath) -define &quot;$(DefineConstants)&quot; -unsafe $(AllowUnsafeBlocks)" />
   </Target>
+  <ItemGroup>
+    <PackageReference Include="tModLoader.CodeAssist" Version="0.1.*" />
+  </ItemGroup>
 </Project>
