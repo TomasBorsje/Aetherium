@@ -30,5 +30,10 @@ namespace Aetherium.Items.Consumables
                 player.AddBuff(item.buffType, 3600, true);
             }
         }
+
+        public override void UpdateAccessory(Player player, bool hideVisual)
+        {
+            player.GetModPlayer<AetheriumModPlayer>().aetherWisp = true;
+        }
     }
 }

@@ -4,43 +4,88 @@ using Terraria.ModLoader;
 
 namespace Aetherium.NPCs
 {
-    public class Aetherium_Slime : ModNPC
+    public class Aether_Cube : ModNPC
     {
         public override void SetStaticDefaults()
         {
-            DisplayName.SetDefault("Aether Slime");
-            Main.npcFrameCount[npc.type] = 4;
+            DisplayName.SetDefault("Aether Cube (PLACEHOLDER)");
+            Main.npcFrameCount[npc.type] = 2;
         }
 
         public override void SetDefaults()
         {
             npc.width = 32;
-            npc.height = 26;
+            npc.height = 32;
             npc.damage = 11;
             npc.defense = 3;
-            npc.lifeMax = 35;
+            npc.lifeMax = 350;
+            npc.noTileCollide = true;
             npc.HitSound = new Terraria.Audio.LegacySoundStyle(SoundID.NPCHit4.SoundId, 1);
             npc.DeathSound = new Terraria.Audio.LegacySoundStyle(SoundID.NPCDeath4.SoundId, 1);
             npc.value = 600f;
             npc.knockBackResist = 0.5f;
-            npc.aiStyle = 1;
-            aiType = NPCID.BlueSlime;
-            animationType = NPCID.BlueSlime;
+            npc.noGravity = true;
+            npc.aiStyle = -1;
+            //aiType = NPCID.BlueSlime;
+            //animationType = NPCID.BlueSlime;
             banner = Item.NPCtoBanner(NPCID.BlueSlime);
             bannerItem = Item.BannerToItem(banner);
         }
 
         public override float SpawnChance(NPCSpawnInfo spawnInfo)
         {
-            return SpawnCondition.OverworldDaySlime.Chance * 0.15f;
+            return SpawnCondition.OverworldDaySlime.Chance * 0f;
+        }
+
+        private const int AI_State_Slot = 0;
+        private const int AI_Timer_Slot = 1;
+
+        public float AI_State
+        {
+            get => npc.ai[AI_State_Slot];
+            set => npc.ai[AI_State_Slot] = value;
+        }
+
+        public float AI_Timer
+        {
+            get => npc.ai[AI_Timer_Slot];
+            set => npc.ai[AI_Timer_Slot] = value;
         }
 
         public override void AI()
         {
-            if (npc.velocity.Y > 0.6f)
+            npc.TargetClosest();
+            npc.velocity *= 0.99f;
+            if (npc.HasValidTarget)
             {
-                npc.velocity.Y = 0.6f;
-                Dust.NewDust(npc.position + new Microsoft.Xna.Framework.Vector2(0, npc.height*0.85f), npc.width, npc.height/5, mod.DustType("Puff"), SpeedX: 0, SpeedY: 1, Alpha: 50);
+                AI_Timer++;
+                if (AI_Timer == 1)
+                {
+                    Microsoft.Xna.Framework.Vector2 vect = Main.player[npc.target].DirectionFrom(npc.Center);
+                    vect.Normalize();
+                    npc.velocity = vect * 6;
+                }
+                else if (AI_Timer > 120)
+                {
+                    AI_Timer = 0;
+                }
+            }
+            else
+            {
+                AI_Timer = 0;
+            }
+        }
+
+        public override void FindFrame(int frameHeight)
+        {
+            npc.spriteDirection = npc.direction;
+            if (AI_Timer<10)
+            {
+                npc.frame.Y = 0 * frameHeight;
+            }
+            else
+            {
+                npc.frame.Y = 1 * frameHeight;
             }
         }
 

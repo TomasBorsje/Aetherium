@@ -9,17 +9,17 @@ using Terraria.ModLoader;
 
 namespace Aetherium.Items.Armor
 {
-    internal class Dead_Mans_Plate : ModItem
+    class Fury_Of_The_Storm : ModItem
     {
         public override void SetStaticDefaults()
         {
-            DisplayName.SetDefault("Dead Man's Plate");
-            Tooltip.SetDefault("Increases defense by 3\nIncreases defense based on how fast you are moving");
+            DisplayName.SetDefault("Storm Cloud in a Bottle");
+            Tooltip.SetDefault("Rapidly striking the same enemy 3 times will shock them, echoing the damage\n5 second cooldown");
         }
         public override void SetDefaults()
         {
-            item.width = 32;
-            item.height = 32;
+            item.width = 20;
+            item.height = 26;
             item.accessory = true;
             item.value = 25000;
             item.rare = 3;
@@ -27,7 +27,7 @@ namespace Aetherium.Items.Armor
 
         public override void UpdateAccessory(Player player, bool hideVisual)
         {
-            player.GetModPlayer<AetheriumModPlayer>().deadMansPlate = true;
+            player.GetModPlayer<AetheriumModPlayer>().furyOfTheStorm = true;
         }
     }
 }

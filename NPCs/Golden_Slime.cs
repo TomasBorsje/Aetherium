@@ -4,11 +4,11 @@ using Terraria.ModLoader;
 
 namespace Aetherium.NPCs
 {
-    public class Aetherium_Slime : ModNPC
+    public class Golden_Slime : ModNPC
     {
         public override void SetStaticDefaults()
         {
-            DisplayName.SetDefault("Aether Slime");
+            DisplayName.SetDefault("Gold Slime");
             Main.npcFrameCount[npc.type] = 4;
         }
 
@@ -16,13 +16,13 @@ namespace Aetherium.NPCs
         {
             npc.width = 32;
             npc.height = 26;
-            npc.damage = 11;
+            npc.damage = 15;
             npc.defense = 3;
-            npc.lifeMax = 35;
-            npc.HitSound = new Terraria.Audio.LegacySoundStyle(SoundID.NPCHit4.SoundId, 1);
+            npc.lifeMax = 70;
+            npc.HitSound = new Terraria.Audio.LegacySoundStyle(SoundID.Coins, 1);
             npc.DeathSound = new Terraria.Audio.LegacySoundStyle(SoundID.NPCDeath4.SoundId, 1);
             npc.value = 600f;
-            npc.knockBackResist = 0.5f;
+            npc.knockBackResist = 0.8f;
             npc.aiStyle = 1;
             aiType = NPCID.BlueSlime;
             animationType = NPCID.BlueSlime;
@@ -32,15 +32,18 @@ namespace Aetherium.NPCs
 
         public override float SpawnChance(NPCSpawnInfo spawnInfo)
         {
-            return SpawnCondition.OverworldDaySlime.Chance * 0.15f;
+            return SpawnCondition.OverworldDaySlime.Chance * 0.015f;
         }
 
         public override void AI()
         {
-            if (npc.velocity.Y > 0.6f)
+            if (Main.rand.Next(10) == 0)
             {
-                npc.velocity.Y = 0.6f;
-                Dust.NewDust(npc.position + new Microsoft.Xna.Framework.Vector2(0, npc.height*0.85f), npc.width, npc.height/5, mod.DustType("Puff"), SpeedX: 0, SpeedY: 1, Alpha: 50);
+                Dust.NewDust(npc.position, npc.width, npc.height, DustID.GoldCoin, SpeedX: 0, SpeedY: 1);
+            }
+            if (npc.velocity.Y != 0)
+            {
+                Dust.NewDust(npc.position, npc.width, npc.height, DustID.GoldCoin, SpeedX: 0, SpeedY: 1);
             }
         }
 
@@ -48,7 +51,7 @@ namespace Aetherium.NPCs
         {
             for (int i = 0; i < 7; i++)
             {
-                int dustType = DustID.BubbleBlock;
+                int dustType = DustID.t_Slime;
                 int dustIndex = Dust.NewDust(npc.position, npc.width, npc.height, dustType);
                 Dust dust = Main.dust[dustIndex];
                 dust.velocity.X = dust.velocity.X + Main.rand.Next(-50, 51) * 0.01f;
@@ -56,18 +59,35 @@ namespace Aetherium.NPCs
                 dust.scale *= 1f + Main.rand.Next(-30, 31) * 0.01f;
             }
             Item.NewItem(npc.getRect(), ItemID.Gel, Main.rand.Next(1, 4));
+            Item.NewItem(npc.getRect(), ItemID.GoldCoin, Main.rand.Next(1, 4));
         }
 
         public override void HitEffect(int hitDirection, double damage)
         {
             for (int i = 0; i < 4; i++)
             {
-                int dustType = DustID.BubbleBlock;
+                int dustType = DustID.t_Slime;
                 int dustIndex = Dust.NewDust(npc.position, npc.width, npc.height, dustType);
                 Dust dust = Main.dust[dustIndex];
                 dust.velocity.X = dust.velocity.X + Main.rand.Next(-50, 51) * 0.01f;
                 dust.velocity.Y = dust.velocity.Y + Main.rand.Next(-50, 51) * 0.01f;
                 dust.scale *= 1f + Main.rand.Next(-30, 31) * 0.01f;
+            }
+            for(int i = 0; i < damage && i < 10; i++)
+            {
+                int coin = Main.rand.Next(100);
+                if (coin <= 2)
+                {
+                    Item.NewItem(npc.getRect(), ItemID.GoldCoin);
+                }
+                else if(coin <= 35)
+                {
+                    Item.NewItem(npc.getRect(), ItemID.SilverCoin);
+                }
+                else
+                {
+                    Item.NewItem(npc.getRect(), ItemID.CopperCoin);
+                }
             }
         }
     }

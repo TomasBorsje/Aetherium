@@ -1,37 +1,7 @@
 [c/7CE4FF:Aetherium] is a mod focused around adding items, weapons, NPCs, and accessories with interesting mechanics, rather than more of the same.
-
-[c/FF4319:Warning: This mod is in early development.] Expect bugs or unbalance. Multiplayer may or may not work. Item icons, textures, & recipes are (mostly) placeholder.
-[c/F4E842:~~ Thank you for 2500+ downloads! ~~]
+[c/FF4319:Warning: Aetherium is currently being revamped.] 
+The mod is being rebuilt from scratch. Expect bugs or unbalance. Multiplayer may or may not work. Item icons, textures, & recipes are (mostly) placeholder. However, expect higher quality everything!
+[c/F4E842:~~ Thank you for 9000+ downloads! (2019 ver) ~~]
+[c/32CD32:See the wiki for contents: bit.ly/aetherwiki]
 [c/2F4ACE:Changelog]: 
-[c/7CE4FF:0.0.5.5]: Added Viscera, a post-WoF "ore", and a pickaxe and bow made of it. Added True Aetherium, craftable, True Aetherium Railgun & True Aetherium Pick. Will expand on these materials next update.
-[c/FF4319:0.0.5.4]: Fixed pocket cyclone effect not stopping after unequipping. (Sorry!)
-[c/7CE4FF:0.0.5.3]: Added "Unstable Warp Bubble", a craftable item that freezes you in time, massively increasing your defense. Added Viscera (unobtainable, WIP ore).
-[c/7CE4FF:0.0.5.2]: Players now spawn with new "[c/7CE4FF:Aether Wisp in a Bottle]" pet as a thank you for downloading. Added Pocket Cyclone & Heavenly Whisper.
-[c/7CE4FF:0.0.5.1]: Added Windfury Charm, updated mod icon & description, nerfed Flame Lantern.
-
-[c/2F4ACE:Current item additions]:
-[c/7CE4FF:Unstable Warp Bubble]: Craftable item that freezes you in time, massively increasing your defense. Good for dodging attacks or stopping fall damage.
-[c/7CE4FF:Heavenly Whisper]: Mage weapon that rapidly shoots damaging skulls. Crafted from Book of Skulls.
-[c/7CE4FF:Pocket Cyclone]: Enemies that damage you are flung into the air and grant you a speed boost. Drops in the snow biome.
-[c/7CE4FF:Aether Wisp in a Bottle]: Wisp pet that all players spawn with as a thank you for downloading Aetherium.
-[c/7CE4FF:Windfury Charm]: Your attacks have a small chance to deal damage twice. Drops from enemies in the jungle.
-[c/7CE4FF:Jar of Aetherium]: Slows your fall for a few seconds while falling. Drops from Aether Elementals.
-[c/7CE4FF:Mana Leech]: Can consume 30 mana to deal an additional 20 damage each time you damage an enemy.
-[c/7CE4FF:Aether Flower]: Increases minion damage by 10% for every 200 current mana you have.
-[c/7CE4FF:Wriggle's Lantern]: Minion damage sets enemies aflame in fire, frostfire, shadowflame, and cursed inferno. +Max minions and minion damage.
-[c/7CE4FF:Smoke Bomb]: Dash forward and gain 'Shadow Dodge' for 1 second. Drops from Aether Elementals.
-[c/7CE4FF:Aetherium Tier]: Basic tools. Will be able to be empowered in later versions into later-game versions. Made from Aetherium Bars, which are made from Blobs of Aetherium.
-[c/7CE4FF:Aether Bolt]: Early-game water bolt-esque weapon where bolts speed up after bouncing. Craftable.
-[c/7CE4FF:Giantslayer Blade]: Deals a percentage of the enemy's current health as bonus damage. Hardmode-only underground drop.
-[c/7CE4FF:Pirate's Coinpurse]: Every 10th enemy killed drops bonus gold. Drops from enemies underground.
-[c/7CE4FF:Vampire Charm]: Stores damage done as 'charge'. Heals you upon taking damage, consuming charge. Drops from enemies on the surface.
-[c/7CE4FF:Dead Man's Plate]: Gain defense, and gain extra defense determined by how fast you're moving. Drops from enemies on the surface.
-[c/7CE4FF:Flame Lantern]: Minion damage ignites enemies. Increases max minions & minion damage. Craftable.
-[c/7CE4FF:Frost Lantern]: Minion damage ignites enemies in frostfire. Increases max minions & minion damage. Craftable.
-[c/7CE4FF:Cursed Lantern]: Minion damage sets enemies aflame in shadowflame & cursed inferno if they are already alight with both frost and normal fire. Increases max minions & minion damage. Craftable.
-[c/7CE4FF:Jade Quiver]: Restores a tiny amount of HP when ammo is consumed. Dealing critical damage with arrows restores a larger amount of health. Increases ranged damage. Craftable.
-[c/7CE4FF:Guardian's Resolve]: Gain defense, and more defense based on the amount of Town NPCs you currently have. Drops from enemies on the surface.
-
-[c/FF4319:WIP]: (you will need cheat sheet or an item spawning mod for these)
-[c/FF4319:Test Sword]: Sword that changes damage each time you enter your world.
-[c/FF4319:Overload Staff (REMOVED)]: Grapple hook that functions as a weapon.
+[c/7CE4FF:(2020)2.0.0.1]: Wiped the mod, starting from scratch. Added Aether Slimes, Wisp in a Bottle, Stormcloud in a Bottle, and Mana Leech.
