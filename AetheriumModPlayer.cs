@@ -1,3 +1,4 @@
+using Aetherium.Projectiles;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using System;
@@ -17,16 +18,22 @@ namespace Aetherium
     {
         public bool aetherWisp;
         public bool furyOfTheStorm;
+        public bool manaLeech;
+        public bool bonePlating;
+        public bool arcaneComet;
 
         int furyOfTheStormTimer, furyOfTheStormDamage, furyOfTheStormProcs, furyOfTheStormCooldown, furyOfTheStormLastEnemyType = 0;
-        public bool manaLeech;
+        int bonePlatingProcs, bonePlatingTimer, bonePlatingCooldown = 0;
+        int arcaneCometCooldown = 0;
+
 
         public override void ResetEffects()
         {
             aetherWisp = false;
             furyOfTheStorm = false;
             manaLeech = false;
-
+            bonePlating = false;
+            arcaneComet = false;
         }
 
         public override void SetupStartInventory(IList<Item> items)
@@ -66,6 +73,44 @@ namespace Aetherium
                 furyOfTheStormDamage = 0;
                 furyOfTheStormProcs = 0;
                 furyOfTheStormCooldown = 0;
+            }
+            if(bonePlating)
+            {
+                if(bonePlatingCooldown==0) // Not on cooldown
+                {
+                    if (bonePlatingProcs > 0 && bonePlatingTimer != 0)
+                    {
+                        bonePlatingTimer--;
+                        if (Main.rand.Next(3) == 0)
+                        {
+                            Dust.NewDust(player.position, player.width, player.height, 31);
+                        }
+                    }
+                    if (bonePlatingTimer == 0 && bonePlatingProcs > 0)
+                    {
+                        bonePlatingProcs = 0;
+                        bonePlatingCooldown = 720;
+                        bonePlatingProcs = 0;
+                    }
+                    else
+                    {
+                        if(Main.rand.Next(60)==0)
+                        {
+                            Dust.NewDust(player.position, player.width, player.height, 31);
+                        }
+                    }
+                }
+                else if(bonePlatingCooldown != 0)
+                {
+                    bonePlatingCooldown--;
+                }
+            }
+            if(arcaneComet)
+            {
+                if(arcaneCometCooldown!= 0)
+                {
+                    arcaneCometCooldown--;
+                }
             }
         }
 
@@ -131,6 +176,17 @@ namespace Aetherium
                 player.statMana += (int)((player.statManaMax - player.statMana) * 0.4f);
                 player.ManaEffect((int)((player.statManaMax - player.statMana) * 0.4f));
             }
+            if(arcaneComet)
+            {
+                if(arcaneCometCooldown==0)
+                {
+                    Vector2 dir = player.DirectionTo(proj.position);
+                    dir.Normalize();
+                    Projectile.NewProjectile(player.position, dir * 200f, ModContent.ProjectileType<Arcane_Comet>(), (int)(damage * 1.5f), 0, player.whoAmI);
+                    Main.PlaySound(new Terraria.Audio.LegacySoundStyle(2, 28), player.position);
+                    arcaneCometCooldown = 240;
+                }
+            }
         }
 
         
@@ -189,8 +245,27 @@ namespace Aetherium
         }
 
         public override void Hurt(bool pvp, bool quiet, double damage, int hitDirection, bool crit)
-        {
-
+        { 
+            if(bonePlatingProcs>0)
+            {
+                bonePlatingProcs--;
+                player.statLife += (int)(damage * 0.4f);
+                //player.HealEffect((int)(damage * 0.4f));
+                if (Main.myPlayer == player.whoAmI)
+                {
+                    Main.PlaySound(new Terraria.Audio.LegacySoundStyle(3,2), player.position);
+                }
+                if(bonePlatingProcs<1)
+                {
+                    bonePlatingCooldown = 720;
+                    bonePlatingTimer = 0;
+                }
+            }
+            else if (bonePlatingCooldown == 0 && bonePlatingProcs == 0)
+            {
+                bonePlatingProcs = 3;
+                bonePlatingTimer = 180;
+            }
         }
 
         public override void OnHitByNPC(NPC npc, int damage, bool crit)

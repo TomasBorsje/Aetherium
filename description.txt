@@ -4,5 +4,10 @@ The mod is being rebuilt from scratch. Expect bugs or unbalance. Multiplayer may
 [c/F4E842:~~ Thank you for 9000+ downloads! (2019 ver) ~~]
 [c/32CD32:See the wiki for contents: bit.ly/aetherwiki]
 [c/2F4ACE:Changelog]: 
-[c/7CE4FF:(2020)2.0.0.2]: Added homepage link (wiki) to description.
-[c/7CE4FF:(2020)2.0.0.1]: Wiped the mod, starting from scratch. Added Aether Slimes, Wisp in a Bottle, Stormcloud in a Bottle, and Mana Leech.
+[c/7CE4FF:2.0.0.3]: Added Bone Plating and Arcane Comet. Added Aether Spirits.
+[c/7CE4FF:2.0.0.2]: Added homepage link (wiki) to description.
+[c/7CE4FF:2.0.0.1]: Wiped the mod, starting from scratch. Added Aether Slimes, Wisp in a Bottle, Stormcloud in a Bottle, and Mana Leech.
+
+[c/FF8C00:Credits:]
+[c/FFBA66:Rulzinator, for sprite work and ideas]
+
