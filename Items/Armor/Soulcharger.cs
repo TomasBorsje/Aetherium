@@ -9,25 +9,26 @@ using Terraria.ModLoader;
 
 namespace Aetherium.Items.Armor
 {
-    class Arcane_Comet : ModItem
+    class Soulcharger : ModItem
     {
         public override void SetStaticDefaults()
         {
-            DisplayName.SetDefault("Arcane Comet");
-            Tooltip.SetDefault("Dealing ranged damage fires a piercing arcane comet, dealing 110% of the attack's damage\n4 second cooldown");
+            DisplayName.SetDefault("Soulcharger");
+            Tooltip.SetDefault("Killing an enemy increases your max mana by 20\nThis effect is lost after 10 seconds of no combat\nMax 100 bonus mana");
         }
         public override void SetDefaults()
         {
-            item.width = 26;
-            item.height = 30;
+            item.width = 28;
+            item.height = 32;
             item.accessory = true;
             item.value = 25000;
             item.rare = 3;
         }
 
+        int healTimer;
         public override void UpdateAccessory(Player player, bool hideVisual)
         {
-            player.GetModPlayer<AetheriumModPlayer>().arcaneComet = true;
+            player.GetModPlayer<AetheriumModPlayer>().prescenceOfMind = true;
         }
     }
 }

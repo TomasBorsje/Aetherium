@@ -4,18 +4,18 @@ using Terraria.ModLoader;
 
 namespace Aetherium.NPCs
 {
-    public class Aether_Spirit : ModNPC
+    public class Aether_Turret : ModNPC
     {
         public override void SetStaticDefaults()
         {
-            DisplayName.SetDefault("Aether Spirit");
+            DisplayName.SetDefault("Otherwordly Observer");
             Main.npcFrameCount[npc.type] = 2;
         }
 
         public override void SetDefaults()
         {
-            npc.width = 29;
-            npc.height = 24;
+            npc.width = 32;
+            npc.height = 32;
             npc.damage = 14;
             npc.defense = 3;
             npc.lifeMax = 45;
@@ -34,7 +34,7 @@ namespace Aetherium.NPCs
 
         public override float SpawnChance(NPCSpawnInfo spawnInfo)
         {
-            return SpawnCondition.OverworldNightMonster.Chance * 0.10f;
+            return SpawnCondition.Cavern.Chance * 0.00f;
         }
 
         private const int AI_State_Slot = 0;
@@ -55,18 +55,25 @@ namespace Aetherium.NPCs
         public override void AI()
         {
             npc.TargetClosest();
-            npc.velocity *= 0.99f;
+            npc.velocity *= 0;
             if (npc.HasValidTarget)
             {
-                AI_Timer++;
-                if (AI_Timer == 1)
+                if(npc.Distance(Main.player[npc.target].Center) < 400 && Collision.CanHitLine(npc.Center, 1, 1, Main.player[npc.target].Center, 1, 1))
                 {
-                    Main.PlaySound(new Terraria.Audio.LegacySoundStyle(2, 8), npc.position);
-                    Microsoft.Xna.Framework.Vector2 vect = Main.player[npc.target].DirectionFrom(npc.Center);
-                    vect.Normalize();
-                    npc.velocity = vect * 6;
+                    AI_Timer++;
+                    if (AI_Timer == 120)
+                    {
+                        Main.PlaySound(new Terraria.Audio.LegacySoundStyle(2, 8), npc.position);
+                        int a = Projectile.NewProjectile(npc.Center, npc.DirectionTo(Main.player[npc.target].Center) * 15f, ProjectileID.ShadowBeamHostile, 20, 0);
+                        Main.projectile[a].friendly = false;
+                        Main.projectile[a].hostile = true;
+                    }
+                    else if (AI_Timer > 120)
+                    {
+                        AI_Timer = 0;
+                    }
                 }
-                else if (AI_Timer > 120)
+                else
                 {
                     AI_Timer = 0;
                 }
@@ -79,22 +86,20 @@ namespace Aetherium.NPCs
 
         public override void FindFrame(int frameHeight)
         {
-            npc.rotation = npc.AngleTo(Main.player[npc.target].position) + 3.14159265359f;
-            if (AI_Timer<10)
+            
+            if (npc.Distance(Main.player[npc.target].Center) < 400 && Collision.CanHitLine(npc.Center, 1, 1, Main.player[npc.target].Center, 1, 1))
             {
-                npc.frame.Y = 0 * frameHeight;
-                for (int i = 0; i < 3; i++)
+                npc.rotation = npc.AngleTo(Main.player[npc.target].position) + 3.14159265359f;
+                npc.frame.Y = 1 * frameHeight;
+                if (Main.rand.Next(6) == 0)
                 {
                     Dust.NewDust(npc.position, npc.width, npc.height, mod.DustType("Puff"), SpeedX: 0, SpeedY: 0, Alpha: 50);
                 }
             }
             else
             {
-                npc.frame.Y = 1 * frameHeight;
-                if (Main.rand.Next(6) == 0)
-                {
-                    Dust.NewDust(npc.position, npc.width, npc.height, mod.DustType("Puff"), SpeedX: 0, SpeedY: 0, Alpha: 50);
-                }
+                npc.rotation = 0;
+                npc.frame.Y = 0 * frameHeight;
             }
         }
 

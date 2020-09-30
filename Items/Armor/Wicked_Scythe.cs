@@ -9,25 +9,26 @@ using Terraria.ModLoader;
 
 namespace Aetherium.Items.Armor
 {
-    class Arcane_Comet : ModItem
+    class Wicked_Scythe : ModItem
     {
         public override void SetStaticDefaults()
         {
-            DisplayName.SetDefault("Arcane Comet");
-            Tooltip.SetDefault("Dealing ranged damage fires a piercing arcane comet, dealing 110% of the attack's damage\n4 second cooldown");
+            DisplayName.SetDefault("Wicked Scythe");
+            Tooltip.SetDefault("Your attacks deal an additional 15% damage to enemies under 50% hp");
         }
         public override void SetDefaults()
         {
-            item.width = 26;
-            item.height = 30;
+            item.width = 32;
+            item.height = 38;
             item.accessory = true;
             item.value = 25000;
             item.rare = 3;
         }
 
+        int healTimer;
         public override void UpdateAccessory(Player player, bool hideVisual)
         {
-            player.GetModPlayer<AetheriumModPlayer>().arcaneComet = true;
+            player.GetModPlayer<AetheriumModPlayer>().wickedScythe = true;
         }
     }
 }

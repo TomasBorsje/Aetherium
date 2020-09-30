@@ -20,6 +20,7 @@ namespace Aetherium.Projectiles
 			projectile.friendly = true;
 			projectile.ranged = true;
 			projectile.penetrate = 999;
+			projectile.timeLeft = 120;
 			aiType = ProjectileID.WoodenArrowFriendly;
 		}
 

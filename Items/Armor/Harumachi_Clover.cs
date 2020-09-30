@@ -9,17 +9,17 @@ using Terraria.ModLoader;
 
 namespace Aetherium.Items.Armor
 {
-    class Arcane_Comet : ModItem
+    class Harumachi_Clover: ModItem
     {
         public override void SetStaticDefaults()
         {
-            DisplayName.SetDefault("Arcane Comet");
-            Tooltip.SetDefault("Dealing ranged damage fires a piercing arcane comet, dealing 110% of the attack's damage\n4 second cooldown");
+            DisplayName.SetDefault("Enchanted Cherry Blossom");
+            Tooltip.SetDefault("Killed enemies explode damaging petals");
         }
         public override void SetDefaults()
         {
-            item.width = 26;
-            item.height = 30;
+            item.width = 20;
+            item.height = 20;
             item.accessory = true;
             item.value = 25000;
             item.rare = 3;
@@ -27,7 +27,7 @@ namespace Aetherium.Items.Armor
 
         public override void UpdateAccessory(Player player, bool hideVisual)
         {
-            player.GetModPlayer<AetheriumModPlayer>().arcaneComet = true;
+            player.GetModPlayer<AetheriumModPlayer>().harumachiClover = true;
         }
     }
 }
