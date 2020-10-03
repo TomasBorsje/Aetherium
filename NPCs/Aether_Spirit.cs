@@ -1,4 +1,5 @@
-﻿using Terraria;
+﻿using Aetherium.Items.Crafting;
+using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
 
@@ -109,7 +110,8 @@ namespace Aetherium.NPCs
                 dust.velocity.Y = dust.velocity.Y + Main.rand.Next(-50, 51) * 0.01f;
                 dust.scale *= 1f + Main.rand.Next(-30, 31) * 0.01f;
             }
-            if(Main.rand.Next(500)==0)
+            Item.NewItem(npc.getRect(), ModContent.ItemType<Blob_Of_Aether>(), Main.rand.Next(1, 4));
+            if (Main.rand.Next(500)==0)
             {
                 Item.NewItem(npc.getRect(), mod.ItemType("Arcane_Comet"), 1);
             }

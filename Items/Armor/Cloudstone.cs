@@ -9,17 +9,17 @@ using Terraria.ModLoader;
 
 namespace Aetherium.Items.Armor
 {
-    class Mana_Leech : ModItem
+    class Cloudstone : ModItem
     {
         public override void SetStaticDefaults()
         {
-            DisplayName.SetDefault("Mana Leech");
-            Tooltip.SetDefault("Killing an enemy restores 30% of your missing mana");
+            DisplayName.SetDefault("Cloudstone");
+            Tooltip.SetDefault("Cloud effect");
         }
         public override void SetDefaults()
         {
-            item.width = 24;
-            item.height = 28;
+            item.width = 20;
+            item.height = 26;
             item.accessory = true;
             item.value = 25000;
             item.rare = 3;
@@ -27,7 +27,7 @@ namespace Aetherium.Items.Armor
 
         public override void UpdateAccessory(Player player, bool hideVisual)
         {
-            player.GetModPlayer<AetheriumModPlayer>().manaLeech = true;
+            player.GetModPlayer<AetheriumModPlayer>().cloudstone = true;
         }
     }
 }

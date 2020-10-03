@@ -14,7 +14,7 @@ namespace Aetherium.Items.Armor
         public override void SetStaticDefaults()
         {
             DisplayName.SetDefault("Soulcharger");
-            Tooltip.SetDefault("Killing an enemy increases your max mana by 20\nThis effect is lost after 10 seconds of no combat\nMax 100 bonus mana");
+            Tooltip.SetDefault("Killing an enemy increases your max mana by 20\nThis effect is lost after 10 seconds of no combat\nMax 100 bonus mana\n'Any sufficiently advanced technology is indistinguishable from magic'");
         }
         public override void SetDefaults()
         {

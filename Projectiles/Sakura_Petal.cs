@@ -26,7 +26,7 @@ namespace Aetherium.Projectiles
 
 		public override void AI()
         {
-			Lighting.AddLight(projectile.position, 1f, 0.7f, 7.5f);
+			Lighting.AddLight(projectile.position, 1f, 0.34f, 0.94f);
 			if (Main.rand.Next(3) == 0)
 			{
 				Dust.NewDust(projectile.position, 50, 50, 255, SpeedX: 0, SpeedY: 0, Alpha: 50);

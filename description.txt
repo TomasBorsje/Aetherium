@@ -1,11 +1,13 @@
 [c/7CE4FF:Aetherium] is a mod focused around adding items, weapons, NPCs, and accessories with interesting mechanics, rather than more of the same.
-[c/FF4319:Warning: Aetherium is currently in alpha. Most items]
-[c/FF4319:can only be cheated in right now, but they're sweet.]
+[c/FF4319:Warning: Aetherium is currently in alpha. Expect]
+[c/FF4319:frequent updates with new content for you to try.]
 [c/FF7E61:Please leave suggestions and bug reports on GitHub!]
 The mod is being rebuilt from scratch. Expect bugs or unbalance. Multiplayer may or may not work. Item icons, textures, & recipes are (mostly) placeholder. However, expect higher quality everything once it's done!
-[c/F4E842:~~ Thank you for 9000+ downloads! (2019 ver) ~~]
+[c/F4E842:~~ Thank you for 1000+ downloads! (2020 ver) ~~]
 [c/32CD32:See the wiki for contents: bit.ly/aetherwiki]
 [c/2F4ACE:Changelog]: 
+[c/7CE4FF:2.0.0.6]: Aether Slimes and Aether Wisps now drop Blobs of Aetherium, a crafting material.
+[c/7CE4FF:2.0.0.5]: Most accessories can now either be found in chests or crafted. Added 2 new accessories. Added Aether Altar crafting station.
 [c/7CE4FF:2.0.0.4]: Added Imbued Seedling, Wicked Scythe, Enchanted Cherry Blossom, Soulcharger, Otherworldly Observer, new sprites.
 [c/7CE4FF:2.0.0.3]: Added Bone Plating and Arcane Comet. Added Aether Spirits.
 [c/7CE4FF:2.0.0.2]: Added homepage link (wiki) to description.

@@ -46,7 +46,6 @@ namespace Aetherium.NPCs
                 Dust.NewDust(npc.position, npc.width, npc.height, DustID.GoldCoin, SpeedX: 0, SpeedY: 1);
             }
         }
-
         public override void NPCLoot()
         {
             for (int i = 0; i < 7; i++)
@@ -57,6 +56,10 @@ namespace Aetherium.NPCs
                 dust.velocity.X = dust.velocity.X + Main.rand.Next(-50, 51) * 0.01f;
                 dust.velocity.Y = dust.velocity.Y + Main.rand.Next(-50, 51) * 0.01f;
                 dust.scale *= 1f + Main.rand.Next(-30, 31) * 0.01f;
+            }
+            for (int i = 0; i < 50; i++)
+            {
+                Dust.NewDust(npc.position + new Microsoft.Xna.Framework.Vector2(-37.5f, -37.5f), 75, 75, DustID.GoldCoin, SpeedX: 0, SpeedY: 0, Alpha: 50);
             }
             Item.NewItem(npc.getRect(), ItemID.Gel, Main.rand.Next(1, 4));
             Item.NewItem(npc.getRect(), ItemID.GoldCoin, Main.rand.Next(1, 4));

@@ -24,12 +24,13 @@ namespace Aetherium
         public bool wickedScythe;
         public bool prescenceOfMind;
         public bool harumachiClover;
+        public bool cloudstone;
 
         int furyOfTheStormTimer, furyOfTheStormDamage, furyOfTheStormProcs, furyOfTheStormCooldown, furyOfTheStormLastEnemyType = 0;
         int bonePlatingProcs, bonePlatingTimer, bonePlatingCooldown = 0;
         int arcaneCometCooldown = 0;
         int prescenceOfMindTimer, prescenceOfMindStacks = 0;
-
+        int cloudstoneTimer = 0;
 
         public override void ResetEffects()
         {
@@ -41,6 +42,7 @@ namespace Aetherium
             wickedScythe = false;
             prescenceOfMind = false;
             harumachiClover = false;
+            cloudstone = false;
         }
 
         public override void SetupStartInventory(IList<Item> items)
@@ -139,6 +141,15 @@ namespace Aetherium
                     prescenceOfMindStacks = 0;
                 }
             }
+            if(cloudstoneTimer>150)
+            {
+                cloudstoneTimer = 0;
+                Dust.NewDust(player.position + new Microsoft.Xna.Framework.Vector2(-24, -17), player.width + 24, player.height + 17, mod.DustType("Cloud"), Alpha: 50, Scale: Main.rand.NextFloat(0.6f, 0.8f));
+            }
+            else
+            {
+                cloudstoneTimer++;
+            }
         }
 
         public override void PostUpdate()
@@ -200,8 +211,8 @@ namespace Aetherium
             }
             if (manaLeech && target.life < 1 && target.lifeMax > 1 && target.damage > 1)
             {
-                player.statMana += (int)((player.statManaMax - player.statMana) * 0.4f);
-                player.ManaEffect((int)((player.statManaMax - player.statMana) * 0.4f));
+                player.statMana += (int)((player.statManaMax - player.statMana) * 0.3f);
+                player.ManaEffect((int)((player.statManaMax - player.statMana) * 0.3f));
             }
             if (arcaneComet)
             {
@@ -209,7 +220,7 @@ namespace Aetherium
                 {
                     Vector2 dir = player.DirectionTo(proj.position);
                     dir.Normalize();
-                    Projectile.NewProjectile(player.position, dir * 200f, ModContent.ProjectileType<Arcane_Comet>(), (int)(damage * 1.1f), 0, player.whoAmI);
+                    Projectile.NewProjectile(player.position, dir * 200f, ModContent.ProjectileType<Arcane_Comet>(), (int)(damage * 0.7f), 0, player.whoAmI);
                     Main.PlaySound(new Terraria.Audio.LegacySoundStyle(2, 28), player.position);
                     arcaneCometCooldown = 240;
                 }
@@ -285,8 +296,8 @@ namespace Aetherium
             }
             if (manaLeech && target.life < 1 && target.lifeMax > 1 && target.damage > 1)
             {
-                player.statMana += (int)((player.statManaMax - player.statMana) * 0.4f);
-                player.ManaEffect((int)((player.statManaMax - player.statMana) * 0.4f));
+                player.statMana += (int)((player.statManaMax - player.statMana) * 0.3f);
+                player.ManaEffect((int)((player.statManaMax - player.statMana) * 0.3f));
             }
             if (wickedScythe)
             {
@@ -299,6 +310,13 @@ namespace Aetherium
             {
                 prescenceOfMindTimer = 600;
                 prescenceOfMindStacks++;
+            }
+            if (harumachiClover && target.life < 1 && target.lifeMax > 1 && target.damage > 1)
+            {
+                for (double a = 0; a < Math.PI * 2; a += Math.PI / 6f)
+                {
+                    Projectile.NewProjectile(target.position, new Vector2((float)Math.Cos(a), (float)Math.Sin(a)) * 50f, ModContent.ProjectileType<Sakura_Petal>(), (int)(damage * 0.30f), 0, player.whoAmI);
+                }
             }
         }
 

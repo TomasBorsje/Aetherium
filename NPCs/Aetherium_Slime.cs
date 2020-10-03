@@ -1,4 +1,6 @@
-﻿using Terraria;
+﻿using Aetherium.Items.Armor;
+using Aetherium.Items.Crafting;
+using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
 
@@ -56,6 +58,7 @@ namespace Aetherium.NPCs
                 dust.scale *= 1f + Main.rand.Next(-30, 31) * 0.01f;
             }
             Item.NewItem(npc.getRect(), ItemID.Gel, Main.rand.Next(1, 4));
+            Item.NewItem(npc.getRect(), ModContent.ItemType<Blob_Of_Aether>(), Main.rand.Next(1, 4));
         }
 
         public override void HitEffect(int hitDirection, double damage)
@@ -68,6 +71,10 @@ namespace Aetherium.NPCs
                 dust.velocity.X = dust.velocity.X + Main.rand.Next(-50, 51) * 0.01f;
                 dust.velocity.Y = dust.velocity.Y + Main.rand.Next(-50, 51) * 0.01f;
                 dust.scale *= 1f + Main.rand.Next(-30, 31) * 0.01f;
+            }
+            if(Main.rand.NextBool(5))
+            {
+                Item.NewItem(npc.getRect(), ModContent.ItemType<Blob_Of_Aether>());
             }
         }
     }

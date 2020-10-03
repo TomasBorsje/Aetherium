@@ -1,4 +1,5 @@
-﻿using Terraria;
+﻿using Aetherium.Items.Crafting;
+using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
 
@@ -20,6 +21,7 @@ namespace Aetherium.Items.Consumables
             item.shoot = mod.ProjectileType("Aether_Wisp");
             item.buffType = mod.BuffType("Aether_Wisp");
             item.rare = 9;
+            item.value = 0;
             item.UseSound = new Terraria.Audio.LegacySoundStyle(2, 25);
         }
 
@@ -30,7 +32,15 @@ namespace Aetherium.Items.Consumables
                 player.AddBuff(item.buffType, 3600, true);
             }
         }
-
+        public override void AddRecipes()
+        {
+            ModRecipe recipe = new ModRecipe(mod);
+            recipe.AddIngredient(ItemID.Bottle);
+            recipe.AddIngredient(ModContent.ItemType<Blob_Of_Aether>(), 3);
+            recipe.AddTile(TileID.WorkBenches);
+            recipe.SetResult(this);
+            recipe.AddRecipe();
+        }
         public override void UpdateAccessory(Player player, bool hideVisual)
         {
             player.GetModPlayer<AetheriumModPlayer>().aetherWisp = true;
