@@ -141,14 +141,17 @@ namespace Aetherium
                     prescenceOfMindStacks = 0;
                 }
             }
-            if(cloudstoneTimer>150)
+            if (cloudstone)
             {
-                cloudstoneTimer = 0;
-                Dust.NewDust(player.position + new Microsoft.Xna.Framework.Vector2(-24, -17), player.width + 24, player.height + 17, mod.DustType("Cloud"), Alpha: 50, Scale: Main.rand.NextFloat(0.6f, 0.8f));
-            }
-            else
-            {
-                cloudstoneTimer++;
+                if (cloudstoneTimer > 150)
+                {
+                    cloudstoneTimer = 0;
+                    Dust.NewDust(player.position + new Microsoft.Xna.Framework.Vector2(-24, -17), player.width + 24, player.height + 17, mod.DustType("Cloud"), Alpha: 50, Scale: Main.rand.NextFloat(0.6f, 0.8f));
+                }
+                else
+                {
+                    cloudstoneTimer++;
+                }
             }
         }
 
