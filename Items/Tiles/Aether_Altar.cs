@@ -3,7 +3,7 @@ using Terraria.ID;
 using Terraria.ModLoader;
 using static Terraria.ModLoader.ModContent;
 
-namespace Aetherium.Items.Placeable
+namespace Aetherium.Items.Tiles
 {
 	public class Aether_Altar: ModItem
 	{
@@ -26,16 +26,7 @@ namespace Aetherium.Items.Placeable
 			item.useStyle = ItemUseStyleID.SwingThrow;
 			item.consumable = true;
 			item.value = 20000;
-			item.createTile = TileType<Tiles.Aether_Altar>();
-		}
-
-		public override void AddRecipes()
-		{
-			ModRecipe recipe = new ModRecipe(mod);
-			recipe.AddIngredient(ItemID.WorkBench);
-			recipe.AddIngredient(ItemID.DirtBlock, 10);
-			recipe.SetResult(this);
-			recipe.AddRecipe();
+			item.createTile = mod.TileType("Aether_Altar");
 		}
 	}
 }

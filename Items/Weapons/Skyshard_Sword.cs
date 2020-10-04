@@ -1,4 +1,5 @@
-﻿using Microsoft.Xna.Framework;
+﻿using Aetherium.Items.Crafting;
+using Microsoft.Xna.Framework;
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
@@ -6,11 +7,11 @@ using static Terraria.ModLoader.ModContent;
 
 namespace Aetherium.Items.Weapons
 {
-	public class Aether_Sword : ModItem
+	public class Skyshard_Sword : ModItem
 	{
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Aetheric Sword");
+			DisplayName.SetDefault("Skyshard Sword");
 			Tooltip.SetDefault("Right click to dash in the direction of your cursor");
 		}
 
@@ -18,8 +19,8 @@ namespace Aetherium.Items.Weapons
 		{
 			item.damage = 20; // The damage your item deals
 			item.melee = true; // Whether your item is part of the melee class
-			item.width = 34; // The item texture's width
-			item.height = 36; // The item texture's height
+			item.width = 38; // The item texture's width
+			item.height = 40; // The item texture's height
 			item.useTime = 20; // The time span of using the weapon. Remember in terraria, 60 frames is a second.
 			item.useAnimation = 20; // The time span of the using animation of the weapon, suggest setting it the same as useTime.
 			item.knockBack = 5; // The force of knockback of the weapon. Maximum is 20
@@ -45,8 +46,10 @@ namespace Aetherium.Items.Weapons
 			}
 			if(player.altFunctionUse==2)
             {
-				Dust.NewDust(player.position + new Microsoft.Xna.Framework.Vector2(-24, -17), player.width + 24, player.height + 17, mod.DustType("Cloud"), Alpha: 50, Scale: Main.rand.NextFloat(0.6f, 0.8f));
-				Dust.NewDust(player.position + new Microsoft.Xna.Framework.Vector2(-24, -17), player.width + 24, player.height + 17, mod.DustType("Cloud"), Alpha: 50, Scale: Main.rand.NextFloat(0.6f, 0.8f));
+				Main.PlaySound(SoundID.DoubleJump, player.position);
+				Dust.NewDust(player.position + new Microsoft.Xna.Framework.Vector2(-24, player.height), player.width + 24, 5, mod.DustType("Cloud"), Alpha: 50, Scale: Main.rand.NextFloat(0.6f, 0.8f));
+				Dust.NewDust(player.position + new Microsoft.Xna.Framework.Vector2(-24, player.height), player.width + 24, 5, mod.DustType("Cloud"), Alpha: 50, Scale: Main.rand.NextFloat(0.6f, 0.8f));
+				Dust.NewDust(player.position + new Microsoft.Xna.Framework.Vector2(-24, player.height), player.width + 24, 5, mod.DustType("Cloud"), Alpha: 50, Scale: Main.rand.NextFloat(0.6f, 0.8f));
 			}
 			return false;
 		}
@@ -70,5 +73,14 @@ namespace Aetherium.Items.Weapons
         {
 			return true;
         }
-    }
+
+		public override void AddRecipes()
+		{
+			ModRecipe recipe = new ModRecipe(mod);
+			recipe.AddIngredient(ModContent.ItemType<Skyshard>(), 12);
+			recipe.AddTile(TileID.Anvils);
+			recipe.SetResult(this);
+			recipe.AddRecipe();
+		}
+	}
 }

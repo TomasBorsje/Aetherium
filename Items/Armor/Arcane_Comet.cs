@@ -7,6 +7,7 @@ using Terraria;
 using Terraria.ID;
 using static Terraria.ModLoader.ModContent;
 using Terraria.ModLoader;
+using Aetherium.Tiles;
 using Aetherium.Items.Crafting;
 
 namespace Aetherium.Items.Armor
@@ -35,7 +36,7 @@ namespace Aetherium.Items.Armor
             ModRecipe recipe = new ModRecipe(mod);
             recipe.AddIngredient(ModContent.ItemType<Blob_Of_Aether>(), 20);
             recipe.AddIngredient(ItemID.ManaCrystal, 2);
-            recipe.AddTile(TileType<Tiles.Aether_Altar>());
+            recipe.AddTile(TileType<Aether_Altar>());
             recipe.SetResult(this);
             recipe.AddRecipe();
         }

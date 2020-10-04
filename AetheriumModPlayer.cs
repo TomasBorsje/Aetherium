@@ -212,11 +212,6 @@ namespace Aetherium
                     }
                 }
             }
-            if (manaLeech && target.life < 1 && target.lifeMax > 1 && target.damage > 1)
-            {
-                player.statMana += (int)((player.statManaMax - player.statMana) * 0.3f);
-                player.ManaEffect((int)((player.statManaMax - player.statMana) * 0.3f));
-            }
             if (arcaneComet)
             {
                 if(arcaneCometCooldown==0)
@@ -235,10 +230,19 @@ namespace Aetherium
                     target.StrikeNPC((int)(damage * 0.15f), 0, proj.direction);
                 }
             }
-            if (prescenceOfMind && target.life < 1 && target.lifeMax > 1 && target.damage > 1 && prescenceOfMindStacks < 6)
+            if (prescenceOfMind && target.life < 1 && target.lifeMax > 1 && target.damage > 1 && prescenceOfMindStacks < 5)
             {
                 prescenceOfMindTimer = 600;
                 prescenceOfMindStacks++;
+            }
+            if (prescenceOfMind && prescenceOfMindStacks > 0)
+            {
+                prescenceOfMindTimer = 600;
+            }
+            if (manaLeech && target.life < 1 && target.lifeMax > 1 && target.damage > 1 && ((int)((player.statManaMax - player.statMana) * 0.3f) > 0))
+            {
+                player.statMana += (int)((player.statManaMax - player.statMana) * 0.3f);
+                player.ManaEffect((int)((player.statManaMax - player.statMana) * 0.3f));
             }
             if (harumachiClover && target.life < 1 && target.lifeMax > 1 && target.damage > 1 && proj.type != ModContent.ProjectileType<Sakura_Petal>())
             {
@@ -297,11 +301,6 @@ namespace Aetherium
                     }
                 }
             }
-            if (manaLeech && target.life < 1 && target.lifeMax > 1 && target.damage > 1)
-            {
-                player.statMana += (int)((player.statManaMax - player.statMana) * 0.3f);
-                player.ManaEffect((int)((player.statManaMax - player.statMana) * 0.3f));
-            }
             if (wickedScythe)
             {
                 if (target.life < target.lifeMax * 0.5 && (int)(damage * 0.15f) > 0)
@@ -313,6 +312,15 @@ namespace Aetherium
             {
                 prescenceOfMindTimer = 600;
                 prescenceOfMindStacks++;
+            }
+            if (prescenceOfMind && prescenceOfMindStacks > 0)
+            {
+                prescenceOfMindTimer = 600;
+            }
+            if (manaLeech && target.life < 1 && target.lifeMax > 1 && target.damage > 1 && ((int)((player.statManaMax - player.statMana) * 0.3f) > 0))
+            {
+                player.statMana += (int)((player.statManaMax - player.statMana) * 0.3f);
+                player.ManaEffect((int)((player.statManaMax - player.statMana) * 0.3f));
             }
             if (harumachiClover && target.life < 1 && target.lifeMax > 1 && target.damage > 1)
             {
@@ -344,6 +352,10 @@ namespace Aetherium
             {
                 bonePlatingProcs = 3;
                 bonePlatingTimer = 180;
+            }
+            if (prescenceOfMind && prescenceOfMindStacks > 0)
+            {
+                prescenceOfMindTimer = 600;
             }
         }
 

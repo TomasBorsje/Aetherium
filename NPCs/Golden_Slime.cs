@@ -11,7 +11,6 @@ namespace Aetherium.NPCs
             DisplayName.SetDefault("Gold Slime");
             Main.npcFrameCount[npc.type] = 4;
         }
-
         public override void SetDefaults()
         {
             npc.width = 32;
