@@ -11,9 +11,9 @@ namespace Aetherium.Tiles
         {
             Main.tileSolid[Type] = true;
             drop = mod.ItemType("Skyshard_Ore");
-            soundType = 0;
-            minPick = 45;
-            mineResist = 10;
+            soundType = SoundID.Tink;
+            minPick = 55;
+            mineResist = 1;
             soundStyle = 1;
             ModTranslation name = CreateMapEntryName();
             name.SetDefault("Skyshard Ore");

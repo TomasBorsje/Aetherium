@@ -21,16 +21,16 @@ namespace Aetherium.Items.Weapons
 			item.melee = true; // Whether your item is part of the melee class
 			item.width = 38; // The item texture's width
 			item.height = 40; // The item texture's height
-			item.useTime = 20; // The time span of using the weapon. Remember in terraria, 60 frames is a second.
-			item.useAnimation = 20; // The time span of the using animation of the weapon, suggest setting it the same as useTime.
+			item.useTime = 30; // The time span of using the weapon. Remember in terraria, 60 frames is a second.
+			item.useAnimation = 30; // The time span of the using animation of the weapon, suggest setting it the same as useTime.
 			item.knockBack = 5; // The force of knockback of the weapon. Maximum is 20
 			item.value = Item.buyPrice(gold: 1); // The value of the weapon in copper coins
-			item.rare = ItemRarityID.Green; // The rarity of the weapon, from -1 to 13. You can also use ItemRarityID.TheColorRarity
+			item.rare = ItemRarityID.Orange; // The rarity of the weapon, from -1 to 13. You can also use ItemRarityID.TheColorRarity
 			item.UseSound = SoundID.Item1; // The sound when the weapon is being used
 			item.autoReuse = false; // Whether the weapon can be used more than once automatically by holding the use button
 			item.crit = 6; // The critical strike chance the weapon has. The player, by default, has 4 critical strike chance
-			item.shoot = 503;
-			item.shootSpeed = 8f;
+			item.shoot = ProjectileID.WaterBolt;
+			item.shootSpeed = 12f;
 			item.useTurn = true;
 			item.useStyle = ItemUseStyleID.SwingThrow; // 1 is the useStyle
 		}
@@ -50,6 +50,10 @@ namespace Aetherium.Items.Weapons
 				Dust.NewDust(player.position + new Microsoft.Xna.Framework.Vector2(-24, player.height), player.width + 24, 5, mod.DustType("Cloud"), Alpha: 50, Scale: Main.rand.NextFloat(0.6f, 0.8f));
 				Dust.NewDust(player.position + new Microsoft.Xna.Framework.Vector2(-24, player.height), player.width + 24, 5, mod.DustType("Cloud"), Alpha: 50, Scale: Main.rand.NextFloat(0.6f, 0.8f));
 				Dust.NewDust(player.position + new Microsoft.Xna.Framework.Vector2(-24, player.height), player.width + 24, 5, mod.DustType("Cloud"), Alpha: 50, Scale: Main.rand.NextFloat(0.6f, 0.8f));
+			}
+			if (player.altFunctionUse != 2)
+			{
+				return true;
 			}
 			return false;
 		}

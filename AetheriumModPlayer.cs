@@ -1,4 +1,5 @@
 using Aetherium.Projectiles;
+using Terraria.Audio;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using System;
@@ -25,12 +26,16 @@ namespace Aetherium
         public bool prescenceOfMind;
         public bool harumachiClover;
         public bool cloudstone;
+        public bool warpedLocket;
 
         int furyOfTheStormTimer, furyOfTheStormDamage, furyOfTheStormProcs, furyOfTheStormCooldown, furyOfTheStormLastEnemyType = 0;
         int bonePlatingProcs, bonePlatingTimer, bonePlatingCooldown = 0;
         int arcaneCometCooldown = 0;
         int prescenceOfMindTimer, prescenceOfMindStacks = 0;
         int cloudstoneTimer = 0;
+
+        // Warp
+        public int warp;
 
         public override void ResetEffects()
         {
@@ -43,6 +48,8 @@ namespace Aetherium
             prescenceOfMind = false;
             harumachiClover = false;
             cloudstone = false;
+            warpedLocket = false;
+            warp = 0;
         }
 
         public override void SetupStartInventory(IList<Item> items)
@@ -141,7 +148,7 @@ namespace Aetherium
                     prescenceOfMindStacks = 0;
                 }
             }
-            if (cloudstone)
+            if(cloudstone)
             {
                 if (cloudstoneTimer > 150)
                 {
@@ -151,6 +158,42 @@ namespace Aetherium
                 else
                 {
                     cloudstoneTimer++;
+                }
+            }
+            if(warp > 0)
+            {
+                if(Main.rand.NextBool(9000))
+                {
+                    int warpEffect = Main.rand.Next(warp - 50, warp + 51);
+                    player.ManaEffect(warpEffect);
+                    
+                    if(warpEffect > 150)
+                    {
+                        player.AddBuff(BuffID.Cursed, 150);
+                        player.AddBuff(BuffID.Obstructed, 300);
+                        player.AddBuff(BuffID.CursedInferno, 150);
+                        Main.PlaySound(new LegacySoundStyle(2, 100).WithPitchVariance(0.15f), player.Center);
+                    }
+                    else if(warpEffect > 100)
+                    {
+                        player.AddBuff(BuffID.Ichor, 100);
+                        player.AddBuff(164, 100);
+                        Main.PlaySound(new LegacySoundStyle(2, 100).WithPitchVariance(0.15f), player.Center);
+                    }
+                    else if(warpEffect>50)
+                    {
+                        player.AddBuff(BuffID.Poisoned, 180);
+                        Main.PlaySound(new LegacySoundStyle(2, 100).WithPitchVariance(0.15f), player.Center);
+                    }
+                    else if(warpEffect>0)
+                    {
+                        string[] quotes = { "You are messing with powers far beyond your comprehension.", "You do not know what you are doing.", "I can see you." };
+                        if(Main.myPlayer == player.whoAmI)
+                        {
+                            Main.PlaySound(new LegacySoundStyle(29, 8).WithPitchVariance(0.15f), player.Center);
+                            Main.NewText(Main.rand.Next(quotes), Color.Purple);
+                        }
+                    }
                 }
             }
         }
@@ -251,6 +294,13 @@ namespace Aetherium
                     Projectile.NewProjectile(target.position, new Vector2((float)Math.Cos(a), (float)Math.Sin(a)) * 50f, ModContent.ProjectileType<Sakura_Petal>(), (int)(damage*0.30f), 0, player.whoAmI);
                 }
             }
+            if(warpedLocket && !target.boss && target.defense < 9000)
+            {
+                if(Main.rand.NextBool(25))
+                {
+                    target.StrikeNPCNoInteraction(target.lifeMax * 2, 0, 0);
+                }
+            }
         }
 
         
@@ -327,6 +377,13 @@ namespace Aetherium
                 for (double a = 0; a < Math.PI * 2; a += Math.PI / 6f)
                 {
                     Projectile.NewProjectile(target.position, new Vector2((float)Math.Cos(a), (float)Math.Sin(a)) * 50f, ModContent.ProjectileType<Sakura_Petal>(), (int)(damage * 0.30f), 0, player.whoAmI);
+                }
+            }
+            if (warpedLocket && !target.boss && target.defense < 9000)
+            {
+                if (Main.rand.NextBool(25))
+                {
+                    target.StrikeNPCNoInteraction(target.lifeMax * 2, 0, 0);
                 }
             }
         }
