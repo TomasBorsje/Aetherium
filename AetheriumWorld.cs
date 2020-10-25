@@ -9,6 +9,7 @@ using Terraria.GameContent.Generation;
 using Aetherium.Items.Armor;
 using Aetherium.Items.Tiles;
 using Aetherium.Tiles;
+using Terraria.ModLoader.IO;
 
 namespace Aetherium
 {
@@ -18,6 +19,59 @@ namespace Aetherium
 		const int GOLD_CHEST = 1;
 		const int SKYWARE_CHEST = 13;
 		const int AETHERIUM_ITEM_CHANCE = 7; // One in x items is an aetherium item
+		public static bool downedElementalSlimes;
+
+		public override void Initialize()
+		{
+			downedElementalSlimes = false;
+		}
+		public override TagCompound Save()
+		{
+			var downed = new List<string>();
+			if (downedElementalSlimes)
+			{
+				downed.Add("elementalSlimes");
+			}
+
+			return new TagCompound
+			{
+				["downed"] = downed,
+			};
+		}
+
+		public override void Load(TagCompound tag)
+		{
+			var downed = tag.GetList<string>("downed");
+			downedElementalSlimes = downed.Contains("elementalSlimes");
+		}
+
+		public override void LoadLegacy(BinaryReader reader)
+		{
+			int loadVersion = reader.ReadInt32();
+			if (loadVersion == 0)
+			{
+				BitsByte flags = reader.ReadByte();
+				downedElementalSlimes = flags[0];
+			}
+			else
+			{
+				mod.Logger.WarnFormat("Aetherium: Unknown loadVersion: {0}", loadVersion);
+			}
+		}
+
+		public override void NetSend(BinaryWriter writer)
+		{
+			var flags = new BitsByte();
+			flags[0] = downedElementalSlimes;
+			writer.Write(flags);
+		}
+
+		public override void NetReceive(BinaryReader reader)
+		{
+			BitsByte flags = reader.ReadByte();
+			downedElementalSlimes = flags[0];
+		}
+
 		public override void PostWorldGen()
 		{
 			int[] woodenChestItems = { ModContent.ItemType<Harumachi_Clover>(), ModContent.ItemType<Dead_Mans_Plate>() };
@@ -36,18 +90,6 @@ namespace Aetherium
                     }
                 }
             }
-
-            //for (int k = 0; k < (int)((Main.maxTilesX * Main.maxTilesY) * 6E-02); k++)
-            //{
-            //	int x = WorldGen.genRand.Next(0, Main.maxTilesX);
-            //	int y = WorldGen.genRand.Next((int)WorldGen.worldSurfaceLow, Main.maxTilesY); // WorldGen.worldSurfaceLow is actually the highest surface tile. In practice you might want to use WorldGen.rockLayer or other WorldGen values.
-
-            //	Tile tile = Framing.GetTileSafely(x, y);
-            //	if (tile.active() && tile.type == TileID.Cloud)
-            //	{
-            //		WorldGen.TileRunner(x, y, WorldGen.genRand.Next(3, 6), WorldGen.genRand.Next(2, 6), ModContent.TileType<Tiles.Skyshard_Ore>());
-            //	}
-            //         }
 
             for (int chestIndex = 0; chestIndex < 1000; chestIndex++)
 			{

@@ -26,26 +26,16 @@ namespace Aetherium.NPCs
                 {
                     npc.DropItemInstanced(npc.position, npc.Size, ModContent.ItemType<Items.Armor.Voidtouched_Heart>(), 1, true);
                 }
-                if (Main.hardMode)
-                {
-                    if (Main.player[Player.FindClosest(npc.position, npc.width, npc.height)].ZoneUndergroundDesert)
-                    {
-                        if (Main.rand.NextBool(250))
-                        {
-                            Item.NewItem(npc.getRect(), ModContent.ItemType<Desert_Rose>());
-                        }
-                    }
-                }
             }
         }
 
         public override void SetupShop(int type, Chest shop, ref int nextSlot)
         {
-            if (type == NPCID.ArmsDealer)
-            {
-                shop.item[nextSlot].SetDefaults(ModContent.ItemType<Desert_Rose>());
-                nextSlot++;
-            }
+            //if (type == NPCID.ArmsDealer)
+            //{
+            //    shop.item[nextSlot].SetDefaults(ModContent.ItemType<Desert_Rose>());
+            //    nextSlot++;
+            //}
         }
     }
 }

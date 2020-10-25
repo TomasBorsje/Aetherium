@@ -13,7 +13,7 @@ namespace Aetherium.Items.Crafting
     {
         public override void SetStaticDefaults()
         {
-            DisplayName.SetDefault("Blob Of Aether");
+            DisplayName.SetDefault("Blob of Aether");
             Tooltip.SetDefault("Light and wispy\nCombine at an Aether Altar, found in Sky Islands");
             ItemID.Sets.ItemNoGravity[item.type] = true;
         }

@@ -6,13 +6,13 @@ The mod is being rebuilt from scratch. Expect bugs or unbalance. Multiplayer may
 [c/F4E842:~~ Thank you for 1500+ downloads! (2020 ver) ~~]
 [c/32CD32:See the wiki for contents: bit.ly/aetherwiki]
 [c/2F4ACE:Changelog]: 
+[c/7CE4FF:2.1.1.0]: Added new Elemental Slimes boss + loot. Added Rainbow Rifle.
 [c/7CE4FF:2.0.1.0]: Added "Warp" mechanic + accessories. Added Desert Rose gun.
 [c/7CE4FF:2.0.0.9]: Added Skyshard weapons (no summoner yet). 
 [c/7CE4FF:2.0.0.8]: Added Dead Man's Plate, Skyshard Sword & Ore (found on sky islands), bugfixes.
 [c/7CE4FF:2.0.0.7]: Emergency fix to fix cloud particle effect. Added Aetheric Sword (WIP)
 [c/7CE4FF:2.0.0.6]: Aether Slimes and Aether Wisps now drop Blobs of Aetherium, a crafting material.
 [c/7CE4FF:2.0.0.5]: Most accessories can now either be found in chests or crafted. Added 2 new accessories. Added Aether Altar crafting station.
-[c/7CE4FF:2.0.0.4]: Added Imbued Seedling, Wicked Scythe, Enchanted Cherry Blossom, Soulcharger, Otherworldly Observer, new sprites.
 
 [c/FF8C00:Credits:]
 [c/FFBA66:Rulzinator, for sprite work and ideas]

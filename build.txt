@@ -1,4 +1,4 @@
 author = Wingmann
-version = 2.0.1.0
+version = 2.1.1.0
 displayName = Aetherium
 homepage = http://bit.ly/aetherwiki

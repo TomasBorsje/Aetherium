@@ -13,7 +13,6 @@ namespace Aetherium.NPCs
             DisplayName.SetDefault("Aether Slime");
             Main.npcFrameCount[npc.type] = 4;
         }
-
         public override void SetDefaults()
         {
             npc.width = 32;
@@ -42,7 +41,7 @@ namespace Aetherium.NPCs
             if (npc.velocity.Y > 0.6f)
             {
                 npc.velocity.Y = 0.6f;
-                Dust.NewDust(npc.position + new Microsoft.Xna.Framework.Vector2(0, npc.height*0.85f), npc.width, npc.height/5, mod.DustType("Puff"), SpeedX: 0, SpeedY: 1, Alpha: 50);
+                Dust.NewDust(npc.position + new Microsoft.Xna.Framework.Vector2(0, npc.height * 0.85f), npc.width, npc.height / 5, mod.DustType("Puff"), SpeedX: 0, SpeedY: 1, Alpha: 50);
             }
         }
 
@@ -72,7 +71,7 @@ namespace Aetherium.NPCs
                 dust.velocity.Y = dust.velocity.Y + Main.rand.Next(-50, 51) * 0.01f;
                 dust.scale *= 1f + Main.rand.Next(-30, 31) * 0.01f;
             }
-            if(Main.rand.NextBool(5))
+            if (Main.rand.NextBool(5))
             {
                 Item.NewItem(npc.getRect(), ModContent.ItemType<Blob_Of_Aether>());
             }

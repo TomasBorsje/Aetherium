@@ -12,6 +12,7 @@ namespace Aetherium.Projectiles
 		public override void SetStaticDefaults()
 		{
 			DisplayName.SetDefault("Desert Rose Bullet");
+			
 		}
 
 		public override void SetDefaults()

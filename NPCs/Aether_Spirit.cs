@@ -29,8 +29,7 @@ namespace Aetherium.NPCs
             npc.aiStyle = -1;
             //aiType = NPCID.BlueSlime;
             //animationType = NPCID.BlueSlime;
-            banner = Item.NPCtoBanner(NPCID.BlueSlime);
-            bannerItem = Item.BannerToItem(banner);
+            banner = 0;
         }
 
         public override float SpawnChance(NPCSpawnInfo spawnInfo)

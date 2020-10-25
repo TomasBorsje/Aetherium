@@ -27,6 +27,8 @@ namespace Aetherium
         public bool harumachiClover;
         public bool cloudstone;
         public bool warpedLocket;
+        public bool catalystOfAeons;
+
 
         int furyOfTheStormTimer, furyOfTheStormDamage, furyOfTheStormProcs, furyOfTheStormCooldown, furyOfTheStormLastEnemyType = 0;
         int bonePlatingProcs, bonePlatingTimer, bonePlatingCooldown = 0;
@@ -50,6 +52,7 @@ namespace Aetherium
             cloudstone = false;
             warpedLocket = false;
             warp = 0;
+            catalystOfAeons = false;
         }
 
         public override void SetupStartInventory(IList<Item> items)
@@ -414,8 +417,21 @@ namespace Aetherium
             {
                 prescenceOfMindTimer = 600;
             }
+            if (catalystOfAeons)
+            {
+                player.statMana += (int)damage * 2;
+                player.ManaEffect((int)damage * 2);
+            }
         }
 
+        public override void OnConsumeMana(Item item, int manaConsumed)
+        {
+            if(catalystOfAeons && manaConsumed > 0)
+            {
+                player.statLife += 1;
+                player.HealEffect(1);
+            }
+        }
         public override void OnHitByNPC(NPC npc, int damage, bool crit)
         {
 

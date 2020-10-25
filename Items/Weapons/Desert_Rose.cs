@@ -13,12 +13,12 @@ namespace Aetherium.Items.Weapons
 		public override void SetStaticDefaults()
 		{
 			DisplayName.SetDefault("Desert Rose");
-			Tooltip.SetDefault("Fires a short ranged storm of bullets all around you\n88% chance to not consume ammo\n\"Let's make this fun!\"");
+			Tooltip.SetDefault("Fires a short ranged storm of bullets all around you\n90% chance to not consume ammo\n\"Let's make this fun!\"");
 		}
 
 		public override void SetDefaults()
 		{
-			item.damage = 9; // Sets the item's damage. Note that projectiles shot by this weapon will use its and the used ammunition's damage added together.
+			item.damage = 3; // Sets the item's damage. Note that projectiles shot by this weapon will use its and the used ammunition's damage added together.
 			item.ranged = true; // sets the damage type to ranged
 			item.width = 21; // hitbox width of the item
 			item.height = 15; // hitbox height of the item
@@ -27,7 +27,7 @@ namespace Aetherium.Items.Weapons
 			item.useStyle = ItemUseStyleID.HoldingOut; // how you use the item (swinging, holding out, etc)
 			item.noMelee = true; //so the item's animation doesn't do damage
 			item.knockBack = 4; // Sets the item's knockback. Note that projectiles shot by this weapon will use its and the used ammunition's knockback added together.
-			item.value = Item.buyPrice(0, 25, 0, 0); // how much the item sells for (measured in copper)
+			item.value = Item.sellPrice(0, 2, 0, 0); // how much the item sells for (measured in copper)
 			item.rare = ItemRarityID.Orange; // the color that the item's name will be in-game
 			item.UseSound = new Terraria.Audio.LegacySoundStyle(2, 11); // The sound that this item plays when used.
 			item.autoReuse = true; // if you can hold click to automatically use it again
@@ -45,18 +45,12 @@ namespace Aetherium.Items.Weapons
 			Projectile.NewProjectile(position, new Vector2(perturbedSpeed.X, perturbedSpeed.Y), ProjectileType<Desert_Rose_Bullet>(), damage, 1, player.whoAmI);
 			Projectile.NewProjectile(position, new Vector2(perturbedSpeed2.X, perturbedSpeed2.Y), ProjectileType<Desert_Rose_Bullet>(), damage, 1, player.whoAmI);
 			Projectile.NewProjectile(position, new Vector2(perturbedSpeed3.X, perturbedSpeed3.Y), ProjectileType<Desert_Rose_Bullet>(), damage, 1, player.whoAmI);
-			//speedX = perturbedSpeed.X;
-			//speedY = perturbedSpeed.Y;
-			return false; // return true to allow tmodloader to call Projectile.NewProjectile as normal
+			return false;
 		}
 
         public override bool ConsumeAmmo(Player player)
         {
 			return Main.rand.NextBool(3);
         }
-        public override void AddRecipes()
-		{
-
-		}
 	}
 }
